@@ -13,7 +13,7 @@ API client should be just a **treeshakeable** set of typed astync functions retu
 API client is very simple and focuses only on resolving data from the API and returning them in a fiendly format.
 
 ## Architecture
-
+![Architecture](./assets/api-client.png)
 
 **Input**
 - **gets** data from Vue Storefront API
@@ -23,7 +23,6 @@ API client is very simple and focuses only on resolving data from the API and re
 - **exposes** functions for data resolution (like `getProduct`, `makeorder` etc)
 - **exposes** `setup` function to setup endpoints
 
-![Architecture](./assets/api-client.png)
 
 ## Example of usage
 - settng configuration
