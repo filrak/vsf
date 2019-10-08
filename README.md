@@ -61,7 +61,6 @@ Even though using Nuxt Theme with Nuxt Module is recommended way of using Vue St
 
 ## Core libraries
 
-- `@vue-storefront/config` - tiny library shared across all other ones ones that handles config operations
 - `@vue-storefront/modules` - library handling modules feature
 
 ## Core modules

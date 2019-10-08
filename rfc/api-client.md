@@ -24,11 +24,21 @@ API client is very simple and focuses only on:
 
 **Output**
 - **exposes** functions for data resolution (like `getProduct`, `makeorder` etc)
+- **exposes** `setup` function to setup endpoints
 
 ![Architecture](./assets/api-client.png)
 
 ## Example of usage
+- settng configuration
+```js
+import { setup } from '@vue-storefront/api-client`
 
+
+setup({
+  api: 'https://demo.vuestorefront.io/api`
+})
+```
+- making an order
 ```js
 import { makeOrder } from '@vue-storefront/api-client`
 
