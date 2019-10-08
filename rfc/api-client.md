@@ -72,6 +72,52 @@ setup({
 
 Every request is just a axios request. You can override any request params just by passing axios properties to method arguments.
 
+#### Available methods
+
+
+
+`getProducts`
+- `filters` - based on product attributes (color, size etc)
+- `from` 
+- `to`
+- `include`
+- `exclude`
+
+`getCategories`
+- `filters` 
+- `from` 
+- `to`
+- `include`
+- `exclude`
+
+---
+
+`createCart`
+- `token` - guest cart token
+
+`addToCart`
+- `items`
+
+`removeFromCart`
+- `items` - list of unique id's
+
+`applyCoupon` 
+- `code`
+
+`removeCoupon`
+- `code`
+
+---
+
+`placeOrder`
+ - `personalDetails`
+ - `shippingMethod`
+ - `shippingDetails`
+ - `paymentMethod`
+ - `paymentDetails`
+ 
+
+
 **Examples**
 
 Get all categories (default behavior)

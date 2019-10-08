@@ -77,6 +77,7 @@ While building Vue Storefront 2 we need to face many challenges known from previ
 - [Extendibility]()
 - [Updateability]()
 - [Performance]()
+- [Images]()
 - [Browser support]()
 - [Integrations]()
 - [Modules]()
