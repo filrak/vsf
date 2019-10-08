@@ -30,8 +30,7 @@ Vue Storefront 2.x should be a **framework** with theme working as out of the bo
 We defined set of high-level architectural rules that are meant to fulfill above requirements. Their main purpose is to make sure that project is easy to maintain, extend and every decision is reversable.
 
 - Project should have decoupled, and layered architecture to ensure that every of it's parts is encapsulated and communicates with outside world only via strictly declaired public API. Implementation details of given module shouldn't influence those APIs.
-- Every potentially repalceable third party integration API used in core building blocks (api client, core) should be abstracted so we can easily swap it with other solution solving the same problem
-- Modules and layers shouldn't be directly used. instead we should use dependency injection with standarized interfaces to make sure that implementation details of any module is not influencing other ones.
+- Every potentially repalceable third party integration API used in core building blocks (api client, core) should be abstracted so we can easily swap it with other solution solving the same problem. Modules and 3rd parties shouldn't be directly used. instead we should use dependency injection with standarized interfaces to make sure that implementation details of any module is not influencing other ones.
 - Additional complexity should be avoided whenever possible (including unnecesary abstractions for uncertain future goals!)
 - Core package must be tree-shakeable (by feature) which implies multiple ES modules for libraries/modules.
 - We group code by **features* not file/entity types so it's easier to add/remove/edit certain capabilities of Vue Storefront.
