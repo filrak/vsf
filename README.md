@@ -1,4 +1,4 @@
-# Vue Storefront Next (Turbo ^^)
+# Vue Storefront 2 (Turbo ^^)
 
 ## Reasons behind the project
 
