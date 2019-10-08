@@ -74,7 +74,10 @@ Every request is just a axios request. You can override any request params just 
 
 #### Available methods
 
-
+`getProduct`
+- `id`
+- `include`
+- `exclude`
 
 `getProducts`
 - `filters` - based on product attributes (color, size etc)
@@ -116,6 +119,25 @@ Every request is just a axios request. You can override any request params just 
  - `paymentMethod`
  - `paymentDetails`
  
+ ---
+
+ `logIn`
+ - `emaloginil`
+ - `password`
+
+`logOut`
+- `login`
+
+`register`
+- `login`
+- `password`
+- `userData`
+
+`forgotPassword`
+- `email`
+
+`profile`
+- `token`
 
 
 **Examples**
