@@ -17,7 +17,6 @@ API client is very simple and focuses only on resolving data from the API and re
 
 **Input**
 - **gets** data from Vue Storefront API
-- **gets** endpoints from `@vue-storefront/config`
 
 **Output**
 - **exposes** functions for data resolution (like `getProduct`, `makeorder` etc)
