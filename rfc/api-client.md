@@ -6,8 +6,7 @@ You can think about API client as enhanced data resolever from 1.x. API Client w
 
 **API client is just a complementary layer of Vue Storefront API. It shouldn't be used to add new API endpoints. Instead we suggest creating dedicated modules for new features.**
 
-API client should be just **axios** application. It can use either GQL API and REST API.
-
+API client should use **axios** as it's the best HTTP Client lib out there. It can use either GQL API and REST API and is really good documented so we don't need to reinvent the wheel and spend time on docs.
 
 ## Features
 
@@ -68,3 +67,29 @@ setup({
 ```
 
 ### Getting data
+
+Every request is just a axios request. You can override any request params just by passing axios properties to method arguments.
+
+**Examples**
+
+Get all categories (default behavior)
+```js
+import { getCategories } from '@vue-storefront`
+
+let categories;
+
+getCategories()
+  .then({ data } => categories = data)
+```
+
+Modify request to get categories
+```js
+import { getCategories } from '@vue-storefront`
+
+let categories;
+
+getCategories({ params: { 
+    id: 123, 
+    perPage: 20 
+  }}).then({ data } => categories = data)
+```
