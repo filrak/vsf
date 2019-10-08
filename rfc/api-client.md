@@ -10,10 +10,7 @@ API client should be just a **treeshakeable** set of typed astync functions retu
 
 ## Features
 
-API client is very simple and focuses only on:
-- resolving data from the API and returning them in a fiendly format.
-- modifying current resolvers (to fetch additional data fields etc)
-
+API client is very simple and focuses only on resolving data from the API and returning them in a fiendly format.
 
 ## Architecture
 
