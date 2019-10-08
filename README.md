@@ -23,11 +23,12 @@ Vue Storefront Next should be buuilt the way that will ensure dealing with follo
 
 Before every architectural decision we should make sure that it's making it easier for us to achieve all of those goals.
 
-Vue Storefront 2.x should be a **framework** with theme working as out of the box shop with basic configuration. It will be supported by dedicated modules for third-party integrations.
+Vue Storefront 2.x should be a **framework** (so we provide building **blocks**) with theme working as out of the box implementation with basic configuration. It will be extended by dedicated modules for third-party integrations.
 
 ## High-level rules for project architecture
 
 We defined set of high-level architectural rules that are meant to fulfill above requirements. Their main purpose is to make sure that project is easy to maintain, extend and every decision is reversable.
+
 
 - Project should have decoupled, and layered architecture to ensure that every of it's parts is encapsulated and communicates with outside world only via strictly declaired public API. Implementation details of given module shouldn't influence those APIs.
 - Every potentially repalceable third party integration API used in core building blocks (api client, core) should be abstracted so we can easily swap it with other solution solving the same problem. Modules and 3rd parties shouldn't be directly used. instead we should use dependency injection with standarized interfaces to make sure that implementation details of any module is not influencing other ones.
@@ -36,7 +37,6 @@ We defined set of high-level architectural rules that are meant to fulfill above
 - We group code by **features** not file/entity types so it's easier to add/remove/edit certain capabilities of Vue Storefront.
 
 ## High-level architecture
-
 
 Project should be devided into standalone parts with certain responsibilities. In fact architecture may look very similar to Vue Storefront 1.x but certain parts responsibilities are much different now.
 
@@ -86,3 +86,9 @@ While building Vue Storefront 2 we need to face many challenges known from previ
 - [Definition of done]()
 - [Testing]()
 - [Documentation]()
+
+## Ideas
+
+### Unified data formats for CMS/eCommerce
+
+Right now to make best use of the new platform we need to make dedicated integration which implies special theme for every new platform. It's obviously not the bests cenario as we need to provide new theme for every major platform which leads to code duplication and harder maintenance. Ideally we could agree on some common data formats for most common parts of the UI and return them from Hooks. That way it's much easier to maintain multiple integrations.
