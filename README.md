@@ -33,7 +33,7 @@ We defined set of high-level architectural rules that are meant to fulfill above
 - Every potentially repalceable third party integration API used in core building blocks (api client, core) should be abstracted so we can easily swap it with other solution solving the same problem. Modules and 3rd parties shouldn't be directly used. instead we should use dependency injection with standarized interfaces to make sure that implementation details of any module is not influencing other ones.
 - Additional complexity should be avoided whenever possible (including unnecesary abstractions for uncertain future goals!)
 - Core package must be tree-shakeable (by feature) which implies multiple ES modules for libraries/modules.
-- We group code by **features* not file/entity types so it's easier to add/remove/edit certain capabilities of Vue Storefront.
+- We group code by **features** not file/entity types so it's easier to add/remove/edit certain capabilities of Vue Storefront.
 
 ## High-level architecture
 
