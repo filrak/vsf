@@ -7,7 +7,7 @@ In short words - currently Vue Storefront is flooded with technical debt, bad ar
 
 ## High level goals
 
-Vue Storefront Next should be buuilt the way that will ensure dealing with following challenges
+Vue Storefront Next should be buuilt the way that will ensure dealing with following challenges (wchich are learnings from 1.x)
 - Simple one-command installation
 - Seamless updates (!)
 - Easy maintanance of core and VS projects
@@ -16,7 +16,7 @@ Vue Storefront Next should be buuilt the way that will ensure dealing with follo
 - Flexibility in tools/3rd parties to let us swap technologiese
 - Scalability 
 - Better enviroment for "native" VS integrations (like Shopware)
-- "Printing" good practises in a project so it's hard to make a project that doesn;'t run smooth and has bad performance.
+- "Printing" good practises in a project so it's hard to make a project that doesn't run smooth and has bad performance.
 - Not being tied to any 3rd party solution - everything should be optional and replaceable
 - Being sure taht software works well without heavy manual testing
 - Great performance (incl slow 3G)
