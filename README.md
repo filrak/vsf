@@ -2,7 +2,7 @@
 
 ## Reasons behind the project
 
-In short words - currently Vue Storefront is flooded with technical debt, bad architectural decisions that are very hard to redo and unnecesary complexity. We came to a point when it's easier to write a project from scratch and take into account all our learnings there instead of adjusting architecture of 1.x.
+In short words - currently Vue Storefront is flooded with technical debt, bad architectural decisions that are very hard to redo and unnecesary complexity. We came to the point when it's easier to write a project from scratch and take into account all our learnings there instead of adjusting architecture of 1.x.
 
 
 ## High level goals
@@ -12,7 +12,7 @@ Vue Storefront Next should be buuilt the way that will ensure dealing with follo
 - Seamless updates (!)
 - Easy maintanance of core and VS projects
 - Ability to quickly build PoCs and standard shops
-- Extendibility to build non0-standard solutions
+- Extendibility and ability to build non-standard solutions
 - Flexibility in tools/3rd parties to let us swap technologiese
 - Scalability 
 - Better enviroment for "native" VS integrations (like Shopware)
