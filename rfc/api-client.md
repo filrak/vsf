@@ -74,7 +74,7 @@ Every request is just a axios request. You can override any request params just 
 
 Get all categories (default behavior)
 ```js
-import { getCategories } from '@vue-storefront`
+import { getCategories } from '@vue-storefront'
 
 let categories;
 
@@ -84,12 +84,13 @@ getCategories()
 
 Modify request to get categories
 ```js
-import { getCategories } from '@vue-storefront`
+import { getCategories } from '@vue-storefront'
 
 let categories;
 
 getCategories({ params: { 
     id: 123, 
     perPage: 20 
-  }}).then({ data } => categories = data)
+  }})
+  .then({ data } => categories = data)
 ```
