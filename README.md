@@ -18,7 +18,7 @@ Vue Storefront Next should be buuilt the way that will ensure dealing with follo
 - Better enviroment for "native" VS integrations (like Shopware)
 - "Printing" good practises in a project so it's hard to make a project that doesn't run smooth and has bad performance.
 - Not being tied to any 3rd party solution - everything should be optional and replaceable
-- Being sure taht software works well without heavy manual testing
+- Being sure that software works well without heavy manual testing
 - Great performance (incl slow 3G)
 
 Before every architectural decision we should make sure that it's making it easier for us to achieve all of those goals.
