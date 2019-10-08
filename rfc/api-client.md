@@ -30,6 +30,7 @@ With this method we can setup global configuration for every request. You can pa
 
 API Client ships with default configuration that can be overwritten by the user (so usually the only thing you add is `baseURL`)
 
+**NOTE** Not certain yet
 There is also `resolvers` object letting users modify every axios request to VS API. Every resolver is in a form of [axios request](https://github.com/axios/axios#request-config).
 
 **Examples**
@@ -40,13 +41,14 @@ setup({
   baseURL: 'https://some-domain.com/api/'
 })
 ```
-Setting up advanced configuration and overriding `get
+Setting up advanced configuration and overriding (for future versions)
 
 ```js
 setup({
   baseURL: 'https://some-domain.com/api/',
   timeout: 1000,
   headers: {'X-Custom-Header': 'foobar'},
+  // Not decided yet, won't be in Develoeprs preview
   resolvers: {
     getProduct: {
       method: 'post',
@@ -74,7 +76,7 @@ Every request is just a axios request. You can override any request params just 
 
 Get all categories (default behavior)
 ```js
-import { getCategories } from '@vue-storefront'
+import { getCategories } from '@vue-storefront/api-client'
 
 let categories;
 
@@ -84,7 +86,7 @@ getCategories()
 
 Modify request to get categories
 ```js
-import { getCategories } from '@vue-storefront'
+import { getCategories } from '@vue-storefront/api-client'
 
 let categories;
 
