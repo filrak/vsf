@@ -17,10 +17,11 @@ API client is very simple and focuses only on resolving data from the API and re
 
 **Input**
 - **gets** data from Vue Storefront API
+- **exposes** `setup()` function where you can set basic axios properties and modify endpoints.
 
 **Output**
 - **exposes** functions for data resolution (like `getProduct`, `makeOrder` etc)
-- **exposes** `setup()` function where you can set basic axios properties and modify endpoints.
+
 
 ## API
 
