@@ -159,8 +159,7 @@ import { getCategories } from '@vue-storefront/api-client'
 let categories;
 
 getCategories({ params: { 
-    filter: { id: 123 }, 
-    perPage: 20 
+    filter: { id: 123 }
   }})
   .then({ data } => categories = data)
 ```
