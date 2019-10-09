@@ -1,6 +1,6 @@
 # API Client package
 
-Vue Storefront API client is a client-side micro-application built to consume Vue Storefront API. It provides a friendly abstraction layer over network calls and their params to make them easier to consume by other applications. It gets the data from Vue Storefront API and relies on this layer (or something in exchange of it) to work. **It's a standalone package that can be used in any JavaScript project.**.
+Vue Storefront API client is a client-side micro-application built to consume Vue Storefront API. It provides a friendly abstraction layer over network calls and their params to make them easier to consume by other applications.  **It's a standalone package that can be used in any JavaScript project.**.
 
 You can think about API client as enhanced data resolever from 1.x. API Client will be consumed by VS modules.
 
@@ -8,9 +8,11 @@ You can think about API client as enhanced data resolever from 1.x. API Client w
 
 API client will use [axios](https://github.com/axios/axios) as it's the best HTTP Client lib out there. It can use either GQL API and REST API and is really good documented so we don't need to reinvent the wheel and spend time on docs.
 
-## Use case
+## Responsibility and use case
 
-For every Vue app you should use `@vue-storefront/core`. AOI client is a low-level application to be used in other enviroments than Vue.
+API client responsibility is just to make an abstraction over VS API data operations.
+
+For Vue apps we recommend using either core or Nuxt Module. API client is a low-level application to be used in other enviroments than Vue.
 
 ## Features
 

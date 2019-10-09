@@ -1,17 +1,18 @@
 # Vue Storefront Core package
 
+Core should contain **only** features that **glue** other functionalities (similarly to [Nuxt.js core](https://github.com/nuxt/nuxt.js/tree/dev/packages/core)).
 
-**NOTE** The responsibilities of core are now a bit blurred and may highly change.
+Core complexity should be reduced to bare minimum
 
+## Responsibility and use case
 
-Core should contain **only** features that **glue** other functionalities such as libs and modules (similarly to [Nuxt.js core](https://github.com/nuxt/nuxt.js/tree/dev/packages/core)).
+Core responsibility is to make sure that other parts of the ecosystem (not Nuxt ones) are working well together.
 
-In core we also should have all core libraries and it's configuration.
+Vue Storefront core should be used only for existing or custom Vue projects. For every other use case we recommend using Nuxt and Vue Storefront Nuxt module.
 
 ### Architecture
 
-In simple words `@vue-storefront/core` is just a set :of abstractiosn needed by Vue Storefront. It contains
-
+In simple words `@vue-storefront/core` is just a set of abstractiosn and interfaces. It contains
 
 - **Interfaces** to keep common data formats in libs and modules.
 

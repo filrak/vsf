@@ -53,12 +53,12 @@ We decided to divide project into following parts:
 - [**Core libraries**](./rfc/libraries.md) are certain functionalities for Vue Storefront core supporting it's functionality with non-eCommerce features.
 - [**Core modules**](./rfc/modules.md) are official eCommerce functionalities and integrations exposed as Vue hooks. 
 - [**Third party modules**](./rfc/extendibility.md) are third-party integrations exposed as Vue Hooks.
-- [**Vue Storefront Nuxt Module**](./rfc/nuxt-module.md) is a module that installs Vue Storefront in your project with a set of Vue Storefront enhancements for Nuxt.
+- [**Vue Storefront Nuxt Module**](./rfc/nuxt-module.md) is a module with a set of Vue Storefront enhancements for Nuxt.
 - [**Nuxt Theme**](./rfc/nuxt-theme.md) is ready to use implementation of Vue Storefront with additional features provided by Nuxt Module. Using Nuxt theme is a recommended way of building shops with Vue Storefront 
 
 Such architecture will ensure that Vue Storefront is decoupled and not tied to any specific platform or library. With properly structured public APIs and dependency injection every element of the architecture (library, module, even API client) should be replaceable and can be maintained in spearation without affecting other parts of the system.
 
-Nuxt Theme with Nuxt Module is recommended way of using Vue Storefront. **Most of the features will need Nuxt** but we should provide an option for using bare VS core or bare VS API Client for those who want to without any issues (so with a single comman installation)
+Nuxt Theme with Nuxt Module is recommended way of using Vue Storefront and we shouldn't encourage people to experiment with other options. **Most of the features will require Nuxt** but we should provide an option for using bare VS core or bare VS API Client for those who want to without any issues (so with a single comman installation). It's meant mostly for very custom projects that don't need most of our features and complexity.
 
 ## Problems and solutions
 
