@@ -150,7 +150,9 @@ import { getCategories } from '@vue-storefront/api-client'
 let categories;
 
 getCategories()
-  .then({ data } => categories = data)
+  .then({ data } => 
+    categories = data
+  )
 ```
 
 Modify request to get categories
@@ -160,7 +162,11 @@ import { getCategories } from '@vue-storefront/api-client'
 let categories;
 
 getCategories({ params: { 
-    filter: { id: 123 }
+    filter: { 
+      id: 123 
+      }
   }})
-  .then({ data } => categories = data)
+  .then({ data } => 
+    categories = data
+  )
 ```
