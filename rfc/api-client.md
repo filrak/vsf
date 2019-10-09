@@ -6,7 +6,7 @@ You can think about API client as enhanced data resolever from 1.x. API Client w
 
 **API client is just a complementary layer of Vue Storefront API. It shouldn't be used to add new API endpoints. Instead we suggest creating dedicated modules for new features.**
 
-API client should use **axios** as it's the best HTTP Client lib out there. It can use either GQL API and REST API and is really good documented so we don't need to reinvent the wheel and spend time on docs.
+API client should use [axios](https://github.com/axios/axios) as it's the best HTTP Client lib out there. It can use either GQL API and REST API and is really good documented so we don't need to reinvent the wheel and spend time on docs.
 
 ## Features
 
