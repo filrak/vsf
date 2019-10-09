@@ -1,5 +1,34 @@
 # Vue Storefront Core package
 
-Core should contain **only** features that **glue** other functionalities such as libs and modules (similarly to [Nuxt.js core](https://github.com/nuxt/nuxt.js/tree/dev/packages/core)). It shouldn't contain any eCommerce logic and focus only on making all Vue Storefront parts working together and exposing public Vue Storefront API. It should be a hosting enviroment for core libraries and modules and all of them should be replaceable. You should be able to use it for every PWA, not only eCommerce one depending on wchich modules and libs you'll use.  **It's a standalone package that can be used in any Vue project.**
 
-TBD
+**NOTE** The responsibilities of core are now a bit blurred and may highly change.
+
+
+Core should contain **only** features that **glue** other functionalities such as libs and modules (similarly to [Nuxt.js core](https://github.com/nuxt/nuxt.js/tree/dev/packages/core)).
+
+In core we also should have all core libraries and it's configuration.
+
+### Architecture
+
+In simple words `@vue-storefront/core` is just a set :of abstractiosn needed by Vue Storefront. It contains
+
+
+- **Interfaces** to keep common data formats in libs and modules.
+
+- **Dependencies** for most crucial packages like `api-client`
+
+- **Components**, to be precise `vsf-link` and `vsf-view` to handle multistore.
+
+- **Global reactive micro-state** accessible by other libs/modules.
+
+- **Libraries** are core features that can be turned on/off by config (like multistore).
+
+- **Configuration**
+
+### Note on components
+
+`vsf-link` and `vsf-view` components are meant to handle multistore in combination with global state. Under the hood depending on hosting enviroment they should either use `<nuxt-link>` and `<nuxt>` components or `<router-link>` and `<router-view>`
+
+### To be discussed
+
+Should we pass router and Vuex instance to core for better extendibility and more features "outside" of Nuxt?

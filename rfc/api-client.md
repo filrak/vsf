@@ -6,7 +6,11 @@ You can think about API client as enhanced data resolever from 1.x. API Client w
 
 **API client is just a complementary layer of Vue Storefront API. It shouldn't be used to add new API endpoints. Instead we suggest creating dedicated modules for new features.**
 
-API client should use [axios](https://github.com/axios/axios) as it's the best HTTP Client lib out there. It can use either GQL API and REST API and is really good documented so we don't need to reinvent the wheel and spend time on docs.
+API client will use [axios](https://github.com/axios/axios) as it's the best HTTP Client lib out there. It can use either GQL API and REST API and is really good documented so we don't need to reinvent the wheel and spend time on docs.
+
+## Use case
+
+For every Vue app you should use `@vue-storefront/core`. AOI client is a low-level application to be used in other enviroments than Vue.
 
 ## Features
 
@@ -36,6 +40,7 @@ There is also `resolvers` object letting users modify every axios request to VS 
 
 **Examples**
 
+**NOTE** `setup()` is needed only if you want to use API Client standalone. For Nuxt apps those options are hoisted into Nuxt config.
 Setting up application just with `baseURL`
 ```js
 setup({
