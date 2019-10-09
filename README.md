@@ -63,7 +63,7 @@ Even though using Nuxt Theme with Nuxt Module is recommended way of using Vue St
 
 While building Vue Storefront 2 we need to face many challenges known from previous version. Below you can find detailed informations about most important ones:
 
-**NOTE** Some solutions may slightly or highly chance if they fail to serve their purpose or prevent us from reaching any of project goals.
+**NOTE** Some solutions may slightly or highly change if they fail to serve their purpose or prevent us from reaching any of project goals.
 
 - [Maintainability]()
 - [Extendibility]()
