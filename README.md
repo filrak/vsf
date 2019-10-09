@@ -35,6 +35,7 @@ We defined set of high-level architectural rules that are meant to fulfill above
 - Additional complexity should be avoided whenever possible (including unnecesary abstractions for uncertain future goals!)
 - Core package must be tree-shakeable (by feature) which implies multiple ES modules for libraries/modules.
 - We group code by **features** not file/entity types so it's easier to add/remove/edit certain capabilities of Vue Storefront.
+- Most of the eCommerce complexity should be on the API level
 
 ## High-level architecture
 
