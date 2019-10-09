@@ -56,23 +56,6 @@ setup({
   baseURL: 'https://some-domain.com/api/',
   timeout: 1000,
   headers: {'X-Custom-Header': 'foobar'},
-  // Not decided yet, won't be in Develoeprs preview
-  resolvers: {
-    getProduct: {
-      method: 'post',
-      url: '/user/12345',
-      data: {
-        firstName: 'Fred',
-        lastName: 'Flintstone'
-      },
-      transformRequest: [function (data, headers) {
-        return data;
-      }],
-      transformResponse: [function (data) {
-        return data;
-      }]
-    }
-  }
 })
 ```
 
