@@ -1,37 +1,33 @@
 module.exports = {
-  title: 'Storefront UI',
-  description: 'Customizable and performant Vue.js UI library for eCommerce',
-  head: [
-    ['link', { rel: "icon", type: "image/png", sizes: "32x32", href: "https://divante.com/open-graph/favicons_storefrontui/sfui_favicon-32x32.png"}],
-  ],
+  title: 'VSF Next',
+  description: 'Just playing around',
   themeConfig: {
-    sidebarDepth: 2,
+    navbar: false,
     sidebar: [
-      ['/', 'Introduction'],
       {
         title: 'Apps',
         collapsable: false,
         children: [
-          ["/api-client", "API Client"],
-          ["/core", "Core"],
-          ["/modules", "Modules"],
-          ["/nuxt-module", "Nuxt Module"],
-          ["/nuxt-theme", "Nuxt Theme"],
+          ["/rfc/api-client", "API Client"],
+          ["/rfc/core", "Core"],
+          ["/rfc/modules", "Modules"],
+          ["/rfc/nuxt-module", "Nuxt Module"],
+          ["/rfc/nuxt-theme", "Nuxt Theme"],
         ],
       },
       {
         title: 'Problems',
         collapsable: false,
         children: [
-          ['/integrations','Integrations'],
-          ['/extendibility','Extendibility'],
-          ['/updates','Updates'],
-          ['/browser-support','Browser support'],
-          ['/performance','Performance'],
-          ['/images', 'Images'],
-          ['/documentation', 'Documentation'],
-          ['/coding-standards', 'Coding standards'],
-          ['/testing', 'Testing']
+          ['/rfc/integrations','Integrations'],
+          ['/rfc/extendibility','Extendibility'],
+          ['/rfc/updates','Updates'],
+          ['/rfc/browser-support','Browser support'],
+          ['/rfc/performance','Performance'],
+          ['/rfc/images', 'Images'],
+          ['/rfc/documentation', 'Documentation'],
+          ['/rfc/coding-standards', 'Coding standards'],
+          ['/rfc/testing', 'Testing']
         ],
       },
     ]
