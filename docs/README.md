@@ -40,21 +40,21 @@ Project should be devided into isolated parts with strictly defined responsibili
 Every part of the system should expose public API for input/output operations that is not tied to it's implementation details. Use of every service should be reversable which means we shouldn't base any modules behavior on implementation details of another module. To ensure every part is working well with others we will define interfaces in Core package.
 
 :::tip
-**Nuxt Theme** with **Nuxt Module** is recommended way of using Vue Storefront and we shouldn't encourage people to experiment with other options. Most of the features will require Nuxt but we should provide an option for using bare VS modules or even bare VS API Client for those who need it without any issues (so with a single comman installation). It's meant mostly for very custom projects that don't need most of our features and complexity.
+Using **Nuxt Theme** with **Nuxt Module** is recommended way of using Vue Storefront and we shouldn't encourage people to experiment with other options. Most of the features will require Nuxt but we should provide an option for using bare VS modules or even bare VS API Client for those who need it without any issues (so with a single comman installation). It's meant mostly for very custom projects that don't need most of our features and complexity.
 :::
-
-<center><img src="./rfc/assets/vs-high-level-architecture-diagram.png" /></center>
 
 We decided to divide project into following parts:
 
 - **Vue Storefront API** has same responsibility as in 1.x except it will be much richer in business logic. most of current vuex logic will be moved there.
 - [**API Client**](./rfc/api-client.md) is a client-side micro-application built to consume APIs. 
 - [**Vue Storefront Core**](./rfc/core.md) is a shared package of Vue Storefront that glues libraries together and exports interfaces for modules and API clients.
-- [**Core libraries**](./rfc/libraries.md) are certain functionalities for Vue Storefront core supporting it's functionality with non-eCommerce features. The are part of the core package.
+- [**Core libraries**](./rfc/libraries.md) are certain functionalities for Vue Storefront core supporting it's functionality with non-eCommerce features. They are part of the core package.
 - [**Core modules**](./rfc/modules.md) are official eCommerce integrations exposed as Vue hooks. 
 - [**Third party modules**](./rfc/extendibility.md) are third-party integrations exposed as Vue Hooks.
 - [**Vue Storefront Nuxt Module**](./rfc/nuxt-module.md) is a module with a set of Vue Storefront enhancements for Nuxt.
 - [**Nuxt Theme**](./rfc/nuxt-theme.md) is ready to use implementation of Vue Storefront with additional features provided by Nuxt Module. Using Nuxt theme is a recommended way of building shops with Vue Storefront 
+
+<center><img src="./rfc/assets/vs-high-level-architecture-diagram.png" /></center>
 
 Such architecture will ensure that Vue Storefront is decoupled and not tied to any specific platform or library. With properly structured public APIs and dependency injection every element of the architecture (library, module, API client) should be replaceable and can be maintained in spearation without affecting other parts of the system.
 
