@@ -158,3 +158,7 @@ getCategories({ params: {
 ```
 
 You can find implementation of API Client [here](./ntegrations.html#example)
+
+## To consider
+
+- exporting `axios.interceptors` for network interceptors
