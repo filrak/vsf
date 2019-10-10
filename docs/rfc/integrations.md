@@ -9,7 +9,7 @@ To build integration you need to build API client for your platform to get the d
 
 Once you have API Client you can use it to build modules with Vue hooks. You're API are those hooks, setup method and possibly.
 
-API client can be skipped but is recommended.
+When making an integration API client can be skipped but we recommend having it so it can be used with different frameworks than Vue.
 ::: 
 
 ### Responsibilities
