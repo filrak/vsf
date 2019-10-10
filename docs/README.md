@@ -57,9 +57,6 @@ We decided to divide project into following parts:
 
 Such architecture will ensure that Vue Storefront is decoupled and not tied to any specific platform or library. With properly structured public APIs and dependency injection every element of the architecture (library, module, API client) should be replaceable and can be maintained in spearation without affecting other parts of the system.
 
-## Problems and solutions
-
-While building Vue Storefront 2 we need to face many challenges known from previous version. On the right hand side you can find detailed informations about most important ones.
 :::warning
  Some solutions may slightly or highly change if they fail to serve their purpose or prevent us from reaching any of project goals.
 :::
