@@ -1,5 +1,5 @@
 # Extendibility
 
-Swapping API clients and modules + nuxt modules.
+Swapping API clients and integrations + nuxt modules.
 
 TBD

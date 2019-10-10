@@ -4,7 +4,7 @@ API client provides a friendly abstraction layer over network calls and their co
 
 Every integration should use it's own API client. Core is exposing common interface that every API Client should use to ensure common way of configuring requests, headers etc  (there is only one interface for`setup()` function which is global API configuration). API Clients will be using axios.
 
-API client is one of two parts of eCommerce/CMS integration. Second one is a module that exposes Vue hooks. API client is not mandatory but we should promote writing dedicated API clients as a good practice to ensure that every integration is configurable
+API client is one of two parts of eCommerce/CMS integration. Second one is an integration that exposes Vue hooks. API client is not mandatory but we should promote writing dedicated API clients as a good practice to ensure that every integration is configurable
 
 **Every API client is a standalone package that can be used in any JavaScript project.**.
 :::

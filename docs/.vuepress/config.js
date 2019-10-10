@@ -10,7 +10,7 @@ module.exports = {
         children: [
           ["/rfc/api-client", "API Client"],
           ["/rfc/core", "Core"],
-          ["/rfc/modules", "Modules"],
+          ['/rfc/integrations','Integrations'],
           ["/rfc/nuxt-module", "Nuxt Module"],
           ["/rfc/nuxt-theme", "Nuxt Theme"],
         ],
@@ -19,7 +19,6 @@ module.exports = {
         title: 'Problems',
         collapsable: false,
         children: [
-          ['/rfc/integrations','Integrations'],
           ['/rfc/extendibility','Extendibility'],
           ['/rfc/updates','Updates'],
           ['/rfc/browser-support','Browser support'],

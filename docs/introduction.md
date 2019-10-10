@@ -4,7 +4,7 @@
 
 New Vue Storefront should be modular and have strictly defined API. We should be able to work on each of them in separation without worrying that it will break other parts of the system. Users should be able to cut off functionalities they don't need without any problem. At bare minimum Vue Storefront should be able to work with any JavaScript application and framework. On top of this we will build additional "layers", each adding complexity and new features.
 
-Typical Vue Storefront shop will be using Nuxt Theme and Nuxt Module which will provide a working shop tempplate (Theme) and additional functionalities (Nuxt Module). Theme will be using Vue Storefront Hooks (in Vue Storefront modules) to get product, category, cms and other data.
+Typical Vue Storefront shop will be using Nuxt Theme and Nuxt Module which will provide a working shop tempplate (Theme) and additional functionalities (Nuxt Module). Theme will be using Vue Storefront Hooks (in Vue Storefront integrations) to get product, category, cms and other data.
 
 Vue Storefront core is just a set of interfaces that will be used by
 - Vue Hooks (Product, Category, CMS etc) to provide common denominator between multiple platforms
@@ -35,7 +35,7 @@ To ensure coverage of every possible use case Vue Storefront 2 needs to be a **f
 
 Here is a set of high-level architectural rules that are meant to fulfill above requirements. Their main purpose is to make sure that project is easy to maintain, extend and every decision is reversable.
 
-- Project should have decoupled architecture to ensure that every of it's parts is encapsulated and communicates with outside world only via strictly declaired public API defined in core. Implementation details of given module shouldn't influence those APIs.
+- Project should have decoupled architecture to ensure that every of it's parts is encapsulated and communicates with outside world only via strictly declaired public API defined in core. Implementation details of given part shouldn't influence those APIs.
 - We should provide common interfaces for replaceable platform-specific parts to make it easier to maintain multiple platform integrations and learn Vue Storefront.
 - Additional complexity should be avoided whenever possible (especialy unnecesary abstractions for uncertain future goals)
 - Core package must be tree-shakeable.
@@ -57,7 +57,7 @@ Project should be divided into following parts:
 - [**API Client**](./rfc/api-client.md) 
 - [**Vue Storefront Core**](./rfc/core.md) 
 - [**Core libraries**](./rfc/libraries.md) 
-- [**Core/3rd party Modules**](./rfc/modules.md) 
+- [**Core/3rd party Integrations**](./rfc/integrations.md) 
 - [**Vue Storefront Nuxt Module**](./rfc/nuxt-module.md) 
 - [**Nuxt Theme**](./rfc/nuxt-theme.md)
 
