@@ -45,8 +45,13 @@ You can read more about interfaces and integrations [here](./integrations.md)
 
 Should expose `setup` method letting configure API client with axios setup configuration.
 
-TBD
-
+```js
+// typings for axios config may be different```
+export interface apiConfig = axiosConfig
+```
 #### Hooks
 
-TBD
+```js
+// to discuss if we also want to type params
+export interface GetProductHook (params: <T>)
+```
