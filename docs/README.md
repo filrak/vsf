@@ -39,7 +39,9 @@ Project should be devided into isolated parts with strictly defined responsibili
 
 Every part of the system should expose public API for input/output operations that is not tied to it's implementation details. Use of every service should be reversable which means we shouldn't base any modules behavior on implementation details of another module. To ensure every part is working well with others we will define interfaces in Core package.
 
-**Nuxt Theme with Nuxt Module is recommended way of using Vue Storefront and we shouldn't encourage people to experiment with other options. Most of the features will require Nuxt but we should provide an option for using bare VS modules or even bare VS API Client for those who need it without any issues (so with a single comman installation). It's meant mostly for very custom projects that don't need most of our features and complexity.**
+:::tip
+**Nuxt Theme** with **Nuxt Module** is recommended way of using Vue Storefront and we shouldn't encourage people to experiment with other options. Most of the features will require Nuxt but we should provide an option for using bare VS modules or even bare VS API Client for those who need it without any issues (so with a single comman installation). It's meant mostly for very custom projects that don't need most of our features and complexity.
+:::
 
 <center><img src="./rfc/assets/vs-high-level-architecture-diagram.png" /></center>
 
@@ -59,9 +61,9 @@ Such architecture will ensure that Vue Storefront is decoupled and not tied to a
 ## Problems and solutions
 
 While building Vue Storefront 2 we need to face many challenges known from previous version. Below you can find detailed informations about most important ones:
-
-**NOTE** Some solutions may slightly or highly change if they fail to serve their purpose or prevent us from reaching any of project goals.
-
+:::warning
+ Some solutions may slightly or highly change if they fail to serve their purpose or prevent us from reaching any of project goals.
+:::
 - [Maintainability]()
 - [Extendibility]()
 - [Updateability]()
