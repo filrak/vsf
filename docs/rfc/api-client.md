@@ -156,3 +156,5 @@ getCategories({ params: {
     categories = data
   )
 ```
+
+You can find implementation of API Client [here](./ntegrations.html#example)

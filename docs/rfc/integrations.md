@@ -9,14 +9,9 @@ To build integration you need to build API client for your platform to get the d
 
 Once you have API Client you can use it to build modules with Vue hooks. You're API are those hooks, setup method and possibly.
 
-When making an integration API client can be skipped but we recommend having it so it can be used with different frameworks than Vue.
+When making an integration API client can be skipped but we recommend building it so integration can be used with different frameworks than Vue.
 ::: 
 
-### Responsibilities
-
-### Architecture
-
-TBD 
 
 ### Example
 To use Vue Storefront integration user just needs to run it's `setup` function and then start calling Hooks in Vue components.
@@ -65,14 +60,14 @@ Lets start from #2:
 ```js
 // Integration Module
 import { wordpressAPIClient} from 'vsf-wordpress-api-client'
-import { ContentHook } from '@vue-storefront/core' // TS interface for CMS Content Hook
+import { GetContentHook } from '@vue-storefront/core' // TS interface for CMS Content Hook
 import { onCreated, ref } from '@vue/composition-api' // Vue 3 composition API plugin for Vue 2
 
 export function setup (config) {
   const post = wordpressAPIClient.setup(config.wordpressApiConfig)
 }
 
-export async function getContent(id): ContentHook {
+export async function getContent(id): GetContentHook {
   const title = ref(null)
   const content = ref(null)
   const originalPrice = ref(null)
@@ -115,3 +110,4 @@ export function getContent(id) {
 }
 
 ```
+

@@ -55,7 +55,7 @@ Project should be divided into following parts:
 - [**API Client**](./rfc/api-client.md) 
 - [**Vue Storefront Core**](./rfc/core.md) 
 - [**Core libraries**](./rfc/libraries.md) 
-- [**Core/3rd party Integrations**](./rfc/integrations.md) 
+- [**Core/3rd party integration modules**](./rfc/integrations.md) 
 - [**Vue Storefront Nuxt Module**](./rfc/nuxt-module.md) 
 - [**Nuxt Theme**](./rfc/nuxt-theme.md)
 
