@@ -5,7 +5,7 @@ Core should contain **only** features that **glue** other functionalities (simil
 
 Core complexity should be reduced to bare minimum.
 :::
-## Responsibility and use cases
+## Responsibilities
 
 Vue Storefront core is just a set of interfaces that will be used by
 - Vue Hooks (Product, Category, CMS etc) to provide common denominator between multiple platforms
@@ -21,6 +21,7 @@ none
 - core libraries
 - interfaces for API Client
 - interfaces for Hooks
+0 interfaces for integrations
 
 ## Interfaces
 

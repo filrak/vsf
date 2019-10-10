@@ -2,7 +2,6 @@ module.exports = {
   title: 'VSF Next',
   description: 'Just playing around',
   themeConfig: {
-    navbar: false,
     sidebar: [
       {
         title: 'Apps',

@@ -9,7 +9,7 @@ API client is one of two parts of eCommerce/CMS integration. Second one is an in
 **Every API client is a standalone package that can be used in any JavaScript project.**.
 :::
 
-## Responsibility and use case
+## Responsibilities
 
 API client responsibility is just to make an abstraction over API data operations and it's configuration.
 
