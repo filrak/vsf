@@ -64,7 +64,7 @@ To integrate Vue Storefront with 3rd party solution you need to:
 Lets start from #2:
 ```js
 // Integration Module
-import { wordpressAPIClient} from 'vsf-wordpress-api-client`
+import { wordpressAPIClient} from 'sf-wordpress-api-client'
 import { ContentHook } from '@vue-storefront/core' // TS interface for CMS Content Hook
 import { onCreated, ref } from '@vue/composition-api' // Vue 3 composition API plugin for Vue 2
 
