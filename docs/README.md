@@ -49,8 +49,7 @@ We decided to divide project into following parts:
 - [**API Client**](./rfc/api-client.md) is a client-side micro-application built to consume APIs. 
 - [**Vue Storefront Core**](./rfc/core.md) is a shared package of Vue Storefront that glues libraries together and exports interfaces for modules and API clients.
 - [**Core libraries**](./rfc/libraries.md) are certain functionalities for Vue Storefront core supporting it's functionality with non-eCommerce features. They are part of the core package.
-- [**Core modules**](./rfc/modules.md) are official eCommerce integrations exposed as Vue hooks. 
-- [**Third party modules**](./rfc/extendibility.md) are third-party integrations exposed as Vue Hooks.
+- [**Modules**](./rfc/modules.md) are 3rd party system (eCommerce, cms) integrations exposed as Vue hooks. 
 - [**Vue Storefront Nuxt Module**](./rfc/nuxt-module.md) is a module with a set of Vue Storefront enhancements for Nuxt.
 - [**Nuxt Theme**](./rfc/nuxt-theme.md) is ready to use implementation of Vue Storefront with additional features provided by Nuxt Module. Using Nuxt theme is a recommended way of building shops with Vue Storefront 
 
