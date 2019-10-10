@@ -30,7 +30,7 @@ import { setup } from 'vsf-wordpress' // Vue Storefront integration module for W
 
 // Initialize the module and pass configuration
 setup({
-  baseUrl: 'https:mywordpresssite.com/api'
+  baseUrl: 'https://mywordpresssite.com/api'
 })
 
 ```
