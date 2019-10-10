@@ -1,6 +1,6 @@
 # API Client package
 
-Vue Storefront API client is a client-side micro-application built to consume APIs. In our case it's a Vue Storefront API but any integration should use it's own API client. It provides a friendly abstraction layer over network calls and their params to make them easier to consume by other parts of the system.  **It's a standalone package that can be used in any JavaScript project.**.
+Vue Storefront API client is a client-side micro-application built to consume APIs (in our case it's a Vue Storefront API but any integration should use it's own API client). It provides a friendly abstraction layer over network calls and their params to make them easier to consume by other parts of the system.  **It's a standalone package that can be used in any JavaScript project.**.
 
 You can think about API client as enhanced data resolever from 1.x. API Client should be consumed by VS modules and configured by hosting project enviroment (usually Nuxt).
 
