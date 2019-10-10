@@ -19,7 +19,7 @@ API client can be skipped but is recommended.
 TBD 
 
 ### Example
-To use Vue Storefront integration user just needs to run it's `setup` function and then start calling Hooks in our Vue components.
+To use Vue Storefront integration user just needs to run it's `setup` function and then start calling Hooks in Vue components.
 
 Let's see an example of a very simple Wordpress integration that only returns post with a given id.
 
