@@ -23,15 +23,15 @@ module.exports = {
         title: 'Problems',
         collapsable: false,
         children: [
-          ['/integrations','Integrations']
-          ['/extendibility','Extendibility']
-          ['/upgradeability','Upgradeability']
-          ['/browser-support','Browser support']
-          ['/performance','Performance']
+          ['/integrations','Integrations'],
+          ['/extendibility','Extendibility'],
+          ['/updates','Updates'],
+          ['/browser-support','Browser support'],
+          ['/performance','Performance'],
           ['/images', 'Images'],
           ['/documentation', 'Documentation'],
           ['/coding-standards', 'Coding standards'],
-          ['/testing', 'Testing'],
+          ['/testing', 'Testing']
         ],
       },
     ]
