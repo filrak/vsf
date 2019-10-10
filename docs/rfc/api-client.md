@@ -1,16 +1,13 @@
 # API Client package
+:::tip tl;dr
+API client provides a friendly abstraction layer over network calls and their configuration. By using it we can hide implementation details of **how** we get the data and just expose declarative API to be consumed by other apps. With that we can easily do things like switching from ES to GQL without introducing breaking cahnges  
 
-API client is a client-side micro-application built to consume data from APIs. 
+Every integration should use it's own API client. Core is exposing common interface that every API Client should use to ensure common way of configuring requests, headers etc  (there is only one interface for`setup()` function which is global API configuration). API Clients will be using axios.
 
-Every integration should use it's own API client. It provides a friendly abstraction layer over network calls and their configuration to make them easily consumable by other parts of the system or by other apps.  **It's a standalone package that can be used in any JavaScript project.**.
+API client is one of two parts of eCommerce/CMS integration. Second one is a module that exposes Vue hooks. API client is not mandatory but we should promote writing dedicated API clients as a good practice to ensure that every integration is configurable
 
-You can think about API client as enhanced data resolever from 1.x. API Client should be consumed by VS modules and configured by hosting project enviroment (usually Nuxt).
-
-**To ensure that every integration is configurable we should promote writing dedicated API clients as a good practice**
-
-API client will use [axios](https://github.com/axios/axios) as it's the best HTTP Client lib out there providing decent configuration capabilities. It can use either GQL API and REST API and is really good documented so we don't need to reinvent the wheel and spend time on docs.
-
-API client is using API client interface (only for `setup`) from Vue Storefront core.
+**Every API client is a standalone package that can be used in any JavaScript project.**.
+:::
 
 ## Responsibility and use case
 

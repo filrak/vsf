@@ -1,17 +1,17 @@
 # Vue Storefront Core package
 
-Core should contain **only** features that **glue** other functionalities (similarly to [Nuxt.js core](https://github.com/nuxt/nuxt.js/tree/dev/packages/core)) usually by exporting common interfaces.
+:::tip tl;dr
+Core should contain **only** features that **glue** other functionalities (similarly to [Nuxt.js core](https://github.com/nuxt/nuxt.js/tree/dev/packages/core)) without having a business logic by itself. It's exposing interfaces for Vue Hooks and API client. Core package will also contain some tiny core libraries.
 
 Core complexity should be reduced to bare minimum.
-
+:::
 ## Responsibility and use cases
 
-Core responsibility is to expose implementation of restrictions and abstractions needed for other parts of the ecosystem to working well together.
-
+Vue Storefront core is just a set of interfaces that will be used by
+- Vue Hooks (Product, Category, CMS etc) to provide common denominator between multiple platforms
+- API clients to provide common approach to APIs and standarized way of configuration
 
 ## Architecture
-
-In simple words `@vue-storefront/core` is just a set of abstractions, libraries and interfaces. 
 
 **Input**
 
@@ -32,7 +32,7 @@ What we can do however is finding a common "agnostic" denominator that can be sh
 
 We can define what objects are rreturned by hooks but their properties will be different depending on a platform. This way we can make maintanance of multiple themes easier and have some shared formats between each fo them so it's much easier for developers to work with different integrations.
 
-For exampel we can agree that `useProduct` hook is always returning `product`, `category` `childProducts` and `parentProduct` objects (some of them can be `null`). Their properties will be different depending on a platform but "migration" will only require changing property names between the same entities.
+For example we can agree that `useProduct` hook is always returning `product`, `category` `childProducts` and `parentProduct` objects (some of them can be `null`). Their properties will be different depending on a platform but "migration" will only require changing property names between the same entities.
 
 Same for API Clients - we can expect them to utilize axios so we have a common way of configuring them [via `setup` method](./api-client.md#api) but returned entities can be different for every integration.
 
