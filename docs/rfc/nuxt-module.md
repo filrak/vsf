@@ -5,3 +5,6 @@ Most of Vue Storefront features that are beyond simple data operations requires 
 ## Responsibility and use case
 
 Core responsibility of Nuxt module is to provide Nuxt-specific features for Vue Storefront.
+
+
+TBD

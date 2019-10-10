@@ -60,19 +60,7 @@ Such architecture will ensure that Vue Storefront is decoupled and not tied to a
 
 ## Problems and solutions
 
-While building Vue Storefront 2 we need to face many challenges known from previous version. Below you can find detailed informations about most important ones:
+While building Vue Storefront 2 we need to face many challenges known from previous version. On the right hand side you can find detailed informations about most important ones.
 :::warning
  Some solutions may slightly or highly change if they fail to serve their purpose or prevent us from reaching any of project goals.
 :::
-- [Maintainability]()
-- [Extendibility]()
-- [Updateability]()
-- [Performance]()
-- [Images]()
-- [Browser support]()
-- [Integrations]()
-- [Configuration]()
-- [Coding standards]()
-- [Definition of done]()
-- [Testing]()
-- [Documentation]()
