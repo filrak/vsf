@@ -4,12 +4,12 @@ Core should contain **only** features that **glue** other functionalities (simil
 
 Core complexity should be reduced to bare minimum.
 
-## Responsibility and use case
+## Responsibility and use cases
 
 Core responsibility is to expose implementation of restrictions and abstractions needed for other parts of the ecosystem to working well together.
 
 
-### Architecture
+## Architecture
 
 In simple words `@vue-storefront/core` is just a set of abstractions, libraries and interfaces. 
 
@@ -22,7 +22,7 @@ none
 - interfaces for API Client
 - interfaces for Hooks
 
-### Interfaces
+## Interfaces
 
 We are aware of the fact that data formats between platforms are totally different and making them unified is redundant work that will never end up in optimal result.
 
