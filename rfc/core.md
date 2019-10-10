@@ -1,12 +1,13 @@
 # Vue Storefront Core package
 
-Core should contain **only** features that **glue** other functionalities (similarly to [Nuxt.js core](https://github.com/nuxt/nuxt.js/tree/dev/packages/core)) and export interfaces for data Hooks.
+Core should contain **only** features that **glue** other functionalities (similarly to [Nuxt.js core](https://github.com/nuxt/nuxt.js/tree/dev/packages/core)) usually by exporting common interfaces.
 
 Core complexity should be reduced to bare minimum.
 
 ## Responsibility and use case
 
-Core responsibility is to make sure that other parts of the ecosystem (not Nuxt ones) are working well together as well as defining interfaces for various parts of the ecosystem (especially )
+Core responsibility is to expose implementation of restrictions and abstractions needed for other parts of the ecosystem to working well together.
+
 
 ### Architecture
 
