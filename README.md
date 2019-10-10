@@ -1,4 +1,4 @@
-# Vue Storefront 2 (Turbo ^^)
+# Vue Storefront 2.0
 
 ## Reasons behind the project
 
@@ -7,43 +7,39 @@ In short words - currently Vue Storefront is flooded with technical debt, bad ar
 
 ## High level goals
 
-Vue Storefront Next should be buuilt the way that will ensure dealing with following challenges (wchich are learnings from 1.x)
-- Simple one-command installation
-- Seamless updates (!)
-- Easy maintanance of core and VS projects
-- Ability to quickly build PoCs and standard shops
-- Extendibility and ability to build non-standard solutions
-- Flexibility in tools/3rd parties to let us swap technologiese
-- Scalability 
-- Better enviroment for "native" VS integrations (like Shopware)
+Vue Storefront 2.0 should be buuilt the way that will ensure dealing with following challenges (wchich are learnings from 1.x)
+- Simple installation
+- Seamless updates
+- Easy maintanance of core 
+- Smallest possible complexity
+- Good Developer experience
+- Ability to repalce/extend any part of the application
+- Some level of unification with "native" VS integrations (like Shopware)
 - "Printing" good practises in a project so it's hard to make a project that doesn't run smooth and has bad performance.
-- Not being tied to any 3rd party solution - everything should be optional and replaceable (if it makes sense)
-- Being sure that software works well without heavy manual testing
-- Great performance (incl slow 3G)
+- Great performance
+- Tests
 
 Before every architectural decision we should make sure that it's making it easier for us to achieve all of those goals.
 
-Vue Storefront 2.x should be a **framework** (so we provide building **blocks**) with theme working as out of the box implementation with basic configuration. It will be extended by dedicated modules for third-party integrations.
-
 ## High-level rules for project architecture
+
+To ensure coverage of every possible use case Vue Storefront 2 needs to be a **framework**. Developers should be able to replace and remove every part of teh system that they need.
 
 We defined set of high-level architectural rules that are meant to fulfill above requirements. Their main purpose is to make sure that project is easy to maintain, extend and every decision is reversable.
 
-
 - Project should have decoupled, and layered architecture to ensure that every of it's parts is encapsulated and communicates with outside world only via strictly declaired public API. Implementation details of given module shouldn't influence those APIs.
-- Every potentially repalceable third party integration API used in core building blocks (api client, core) should be abstracted so we can easily swap it with other solution solving the same problem. Modules and 3rd parties shouldn't be directly used. instead we should use dependency injection with standarized interfaces to make sure that implementation details of any module is not influencing other ones.
-- Additional complexity should be avoided whenever possible (including unnecesary abstractions for uncertain future goals!)
-- Core package must be tree-shakeable (by feature) which implies multiple ES modules for libraries/modules.
-- We group code by **features** not file/entity types so it's easier to add/remove/edit certain capabilities of Vue Storefront.
-- Most of the eCommerce complexity should be on the API level
+- Additional complexity should be avoided whenever possible (especialy unnecesary abstractions for uncertain future goals)
+- Core package must be tree-shakeable.
+- We group code by **features** instead of file types so it's easier to add/remove/edit certain capabilities of Vue Storefront.
+- For current magento/agnostic integration most of the eCommerce complexity should be on the API level
 
 ## High-level architecture
 
-Project should be devided into standalone parts with certain responsibilities. In fact architecture may look very similar to Vue Storefront 1.x but certain parts responsibilities are much different now.
+Project should be devided into isolated parts with strictly defined responsibilities. Proposed architecture may look very similar to Vue Storefront 1.x but responsibilities of the system are much different now.
 
 Every layer should expose public API for input/output operations that is not tied to implementation details. Use of every service should be reversable which means we shouldn't base any modules behavior on implementation details of another module.
 
-Nuxt Theme with Nuxt Module is recommended way of using Vue Storefront and we shouldn't encourage people to experiment with other options. **Most of the features will require Nuxt** but we should provide an option for using bare VS core or bare VS API Client for those who want to without any issues (so with a single comman installation). It's meant mostly for very custom projects that don't need most of our features and complexity.
+**IMPORTANT** Nuxt Theme with Nuxt Module is recommended way of using Vue Storefront and we shouldn't encourage people to experiment with other options. **Most of the features will require Nuxt** but we should provide an option for using bare VS core or bare VS API Client for those who want to without any issues (so with a single comman installation). It's meant mostly for very custom projects that don't need most of our features and complexity.
 
 ![Architecture](rfc/assets/vs-high-level-architecture-diagram.png)
 
@@ -51,7 +47,7 @@ We decided to divide project into following parts:
 
 - **Vue Storefront API** has same responsibility as in 1.x except it will be much richer in business logic. most of current vuex logic will be moved there.
 - [**API Client**](./rfc/api-client.md) is a client-side micro-application built to consume Vue Storefront API.
-- [**Vue Storefront Core**](./rfc/core.md) is main package of Vue Storefront that glues modules and libraries together and exports common data formats.
+- [**Vue Storefront Core**](./rfc/core.md) is a shared package of Vue Storefront that glues libraries together and exports common data interfaces for modules.
 - [**Core libraries**](./rfc/libraries.md) are certain functionalities for Vue Storefront core supporting it's functionality with non-eCommerce features.
 - [**Core modules**](./rfc/modules.md) are official eCommerce functionalities and integrations exposed as Vue hooks. 
 - [**Third party modules**](./rfc/extendibility.md) are third-party integrations exposed as Vue Hooks.
