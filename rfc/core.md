@@ -10,13 +10,16 @@ Core responsibility is to make sure that other parts of the ecosystem (not Nuxt 
 
 ### Architecture
 
-In simple words `@vue-storefront/core` is just a set of abstractiosn and interfaces. It contains
+In simple words `@vue-storefront/core` is just a set of abstractions, libraries and interfaces. 
 
-- **Interfaces** to keep common data formats in modules.
+**Input**
 
-- **Dependencies** for most crucial packages like `api-client`
+none
 
-- **Libraries** are core features that can be turned on/off.
+**Output**
+- core libraries
+- interfaces for API Client
+- interfaces for Hooks
 
 ### Interfaces
 
