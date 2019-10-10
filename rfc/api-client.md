@@ -1,22 +1,22 @@
 # API Client package
 
-Vue Storefront API client is a client-side micro-application built to consume Vue Storefront API. It provides a friendly abstraction layer over network calls and their params to make them easier to consume by other applications.  **It's a standalone package that can be used in any JavaScript project.**.
+Vue Storefront API client is a client-side micro-application built to consume APIs. In our case it's a Vue Storefront API but any integration should use it's own API client. It provides a friendly abstraction layer over network calls and their params to make them easier to consume by other parts of the system.  **It's a standalone package that can be used in any JavaScript project.**.
 
-You can think about API client as enhanced data resolever from 1.x. API Client will be consumed by VS modules.
+You can think about API client as enhanced data resolever from 1.x. API Client should be consumed by VS modules and configured by hosting project enviroment (usually Nuxt).
 
-**API client is just a complementary layer of Vue Storefront API. It shouldn't be used to add new API endpoints. Instead we suggest creating dedicated modules for new features.**
+**API client is just a complementary layer of API. To ensure that every integration is configurable we should promote writing dedicated API clients as a good practice**
 
-API client will use [axios](https://github.com/axios/axios) as it's the best HTTP Client lib out there. It can use either GQL API and REST API and is really good documented so we don't need to reinvent the wheel and spend time on docs.
+API client will use [axios](https://github.com/axios/axios) as it's the best HTTP Client lib out there providing decent configuration capabilities. It can use either GQL API and REST API and is really good documented so we don't need to reinvent the wheel and spend time on docs.
+
+API client is using API client interface (only for `setup`) from Vue Storefront core
 
 ## Responsibility and use case
 
-API client responsibility is just to make an abstraction over VS API data operations.
-
-For Vue apps we recommend using either core or Nuxt Module. API client is a low-level application to be used in other enviroments than Vue.
+API client responsibility is just to make an abstraction over API data operations and it's configuration.
 
 ## Features
 
-API client is very simple and focuses only on resolving data from the API and returning them in a fiendly format.
+API client is very simple and focuses on resolving data from the API and returning them in a fiendly format along with high-level configuration.
 
 ## Architecture
 ![Architecture](./assets/api-client.png)

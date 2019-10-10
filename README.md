@@ -23,11 +23,11 @@ Before every architectural decision we should make sure that it's making it easi
 
 ## High-level rules for project architecture
 
-To ensure coverage of every possible use case Vue Storefront 2 needs to be a **framework**. Developers should be able to replace and remove every part of teh system that they need.
+To ensure coverage of every possible use case Vue Storefront 2 needs to be a **framework**. Developers should be able to replace and remove every part of the system that they need.
 
 We defined set of high-level architectural rules that are meant to fulfill above requirements. Their main purpose is to make sure that project is easy to maintain, extend and every decision is reversable.
 
-- Project should have decoupled, and layered architecture to ensure that every of it's parts is encapsulated and communicates with outside world only via strictly declaired public API. Implementation details of given module shouldn't influence those APIs.
+- Project should have decoupled, and layered architecture to ensure that every of it's parts is encapsulated and communicates with outside world only via strictly declaired public API defined in core. Implementation details of given module shouldn't influence those APIs.
 - Additional complexity should be avoided whenever possible (especialy unnecesary abstractions for uncertain future goals)
 - Core package must be tree-shakeable.
 - We group code by **features** instead of file types so it's easier to add/remove/edit certain capabilities of Vue Storefront.
@@ -35,19 +35,19 @@ We defined set of high-level architectural rules that are meant to fulfill above
 
 ## High-level architecture
 
-Project should be devided into isolated parts with strictly defined responsibilities. Proposed architecture may look very similar to Vue Storefront 1.x but responsibilities of the system are much different now.
+Project should be devided into isolated parts with strictly defined responsibilities.
 
-Every layer should expose public API for input/output operations that is not tied to implementation details. Use of every service should be reversable which means we shouldn't base any modules behavior on implementation details of another module.
+Every part of the system should expose public API for input/output operations that is not tied to it's implementation details. Use of every service should be reversable which means we shouldn't base any modules behavior on implementation details of another module. To ensure every part is working well with others we will define interfaces in Core package.
 
 **IMPORTANT** Nuxt Theme with Nuxt Module is recommended way of using Vue Storefront and we shouldn't encourage people to experiment with other options. **Most of the features will require Nuxt** but we should provide an option for using bare VS core or bare VS API Client for those who want to without any issues (so with a single comman installation). It's meant mostly for very custom projects that don't need most of our features and complexity.
 
-![Architecture](rfc/assets/vs-high-level-architecture-diagram.png)
+<center><img src="./rfc/assets/vs-high-level-architecture-diagram.png" /></center>
 
 We decided to divide project into following parts:
 
 - **Vue Storefront API** has same responsibility as in 1.x except it will be much richer in business logic. most of current vuex logic will be moved there.
-- [**API Client**](./rfc/api-client.md) is a client-side micro-application built to consume Vue Storefront API.
-- [**Vue Storefront Core**](./rfc/core.md) is a shared package of Vue Storefront that glues libraries together and exports common data interfaces for modules.
+- [**API Client**](./rfc/api-client.md) is a client-side micro-application built to consume APIs. 
+- [**Vue Storefront Core**](./rfc/core.md) is a shared package of Vue Storefront that glues libraries together and exports  interfaces for modules and API clients.
 - [**Core libraries**](./rfc/libraries.md) are certain functionalities for Vue Storefront core supporting it's functionality with non-eCommerce features.
 - [**Core modules**](./rfc/modules.md) are official eCommerce functionalities and integrations exposed as Vue hooks. 
 - [**Third party modules**](./rfc/extendibility.md) are third-party integrations exposed as Vue Hooks.
