@@ -70,7 +70,7 @@ export function setup (config) {
 export async function getContent(id): GetContentHook {
   const title = ref(null)
   const content = ref(null)
-  const originalPrice = ref(null)
+  const originalPost = ref(null)
 
   const result = await wordpressAPIClient.getContent(id) 
 

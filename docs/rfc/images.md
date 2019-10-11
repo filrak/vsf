@@ -6,7 +6,7 @@ They should be extracted on theme level, so we can imagine that building a produ
 
 
 ```js
-import { getProduct } from 'vsf-magento`
+import { getProduct } from 'vsf-magento'
 // other code
 setup () {
   // get product
@@ -14,6 +14,9 @@ setup () {
   const { image } = usecloudinary({ id: 42 })
 
   return {
-    
+    product,
+    image
   }
 }
+```
+You can also change url path in VS API, wrap this hook into another etc. 
