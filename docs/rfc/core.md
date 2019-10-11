@@ -33,7 +33,7 @@ What we can do however is finding a common "agnostic" denominator that can be sh
 
 We can define what objects are rreturned by hooks but their properties will be different depending on a platform. This way we can make maintanance of multiple themes easier and have some shared formats between each fo them so it's much easier for developers to work with different integrations.
 
-For example we can agree that `useProduct` hook is always returning `product`, `category` `childProducts` and `parentProduct` objects (some of them can be `null`). Their properties will be different depending on a platform but "migration" will only require changing property names between the same entities.
+For example we can agree that `useProduct` hook is always returning `product`, `name` `uid` and `parentProduct` objects Their properties will be different depending on a platform but "migration" will only require changing property names between the same entities.
 
 Same for API Clients - we can expect them to utilize axios so we have a common way of configuring them [via `setup` method](./api-client.md#api) but returned entities can be different for every integration.
 
@@ -47,11 +47,120 @@ Should expose `setup` method letting configure API client with axios setup confi
 
 ```js
 // typings for axios config may be different```
-export interface apiConfig = axiosConfig
+interface ApiConfig = AxiosConfig
 ```
+
 #### Hooks
 
 ```js
-// to discuss if we also want to type params
-export interface GetProductHook (params: <T>)
+interface UseProduct<T, U = any, V = (configuration: any) => void> {
+  product: T
+  configuration: U,
+  configure: V
+
+const { name, description, configure } = useProduct({ id: 42 })
+```
+
+```ts
+interface UseCategory<T, U, V = () => any, X = () => any> {
+  category: T
+  appliedFilters: U,
+  applyFilter: V
+  clearFilters: X
+}
+```
+
+```ts
+interface UseContent<T> {
+  content: T
+}
+```
+
+```ts
+interface UseCart
+<
+  T,
+  U = () => any, 
+  V = () => any,
+  X = () => any
+  Y = () => any
+  Z = () => any
+>
+{
+  cart: T,
+  addToCart: U
+  removeFromCart: V
+  clearCart: X
+  coupon: any
+  applyCoupon: Y
+  removeCoupon: Z
+}
+```
+
+```ts
+interface UseWishlist
+<
+  T,
+  U = () => any, 
+  V = () => any,
+  X = () => any
+  Y = () => any
+  Z = () => any
+>
+{
+  wishlist: T,
+  addToWishlist: U
+  removeFromWishlist: V
+  clearWishlist: X
+}
+```
+```ts
+interface UseCompare
+<
+  T,
+  U = () => any, 
+  V = () => any,
+  X = () => any
+  Y = () => any
+  Z = () => any
+>
+{
+  compare: T,
+  addToCompare: U
+  removeFromCompare: V
+  clearCompare: X
+}
+```
+```ts
+interface UseCheckout 
+<
+  ...
+>
+{
+  paymentMethods: ..
+  shippingMethods: ..
+  personalDetails: ..
+  shippingDetails: ..
+  choosenPaymentMethod: ..
+  choosenShippingMethod: ..
+  setPersonalDetails: ..
+  setPaymentMethod: ..
+  setShippingMethod: ..
+  placeOrder: ..
+}
+```
+
+```ts
+interface UseUser 
+<
+
+>
+{
+  user: ..
+  token: string
+  logIn: ..
+  logOut: ..
+  register: ..
+  remindPassword: ..
+}
 ```

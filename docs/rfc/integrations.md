@@ -36,11 +36,11 @@ Once it's initialized we can just use this API in our Vue components:
 </template>
 
 <script>
-import { getContent } from 'vsf-wordpress'
+import { useContent } from 'vsf-wordpress'
 
 export default {
   setup () {
-    const { title } = getContent(42) // we want post with id 42
+    const { title } = useContent(42) // we want post with id 42
 
     return {
       title // now we just need to return title to template
@@ -60,14 +60,14 @@ Lets start from #2:
 ```js
 // Integration Module
 import { wordpressAPIClient} from 'vsf-wordpress-api-client'
-import { GetContentHook } from '@vue-storefront/core' // TS interface for CMS Content Hook
+import { UseContent } from '@vue-storefront/core' // TS interface for CMS Content Hook
 import { onCreated, ref } from '@vue/composition-api' // Vue 3 composition API plugin for Vue 2
 
 export function setup (config) {
   const post = wordpressAPIClient.setup(config.wordpressApiConfig)
 }
 
-export async function getContent(id): GetContentHook {
+export async function useContent(id): UseContentHook<WordpressContent> {
   const title = ref(null)
   const content = ref(null)
   const originalPost = ref(null)
