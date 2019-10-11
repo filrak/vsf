@@ -11,7 +11,7 @@ In CLI people should be able to choose (from official modules)
 
 We can use templating engine like [handlebars](https://handlebarsjs.com) or [ejs](https://ejs.co/) to conditionally generate parts of the template based on CLI options.
 
-
+We want to do sam scaffolding that [vue cli 2](https://github.com/vuejs-templates/webpack) had.
 ## Developers preview
 
 In developers preview there will be only option to generate Theme, without choosing options of what we want to have there.
