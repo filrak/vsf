@@ -1,6 +1,6 @@
 # Nuxt Theme
 
-Nuxt theme is just a template for out of the box working Vue Storefront shop. We should be able to generate themes from CLI.
+Nuxt theme is just a **template** for out of the box working Vue Storefront shop. We should be able to generate themes from CLI.
 
 In CLI people should be able to choose (from official modules)
 - eCommerce platform, 
@@ -9,7 +9,7 @@ In CLI people should be able to choose (from official modules)
 - cms
 - If they want to use Storefront UI or just leave templates empty (just pull data)
 
-We can use templating engine like [handlebars](https://handlebarsjs.com) to conditionally generate parts of the template based on CLI options
+We can use templating engine like [handlebars](https://handlebarsjs.com) or [ejs](https://ejs.co/) to conditionally generate parts of the template based on CLI options.
 
 
 ## Developers preview
