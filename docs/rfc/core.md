@@ -36,16 +36,28 @@ Should expose `setup` method letting configure API client with axios setup confi
 #### Hooks
 
 ```js
-interface UseProduct<T, U = any, V = (configuration: any) => void> {
+interface UseProduct
+<
+  T, 
+  U = any, 
+  V = (configuration: any) => void
+> 
+{
   product: T
   configuration: U,
   configure: V
-
-const { name, description, configure } = useProduct({ id: 42 })
+}
 ```
 
 ```ts
-interface UseCategory<T, U, V = () => any, X = () => any> {
+interface UseCategory
+<
+  T, 
+  U, 
+  V = () => any, 
+  X = () => any
+> 
+{
   category: T
   appliedFilters: U,
   applyFilter: V
