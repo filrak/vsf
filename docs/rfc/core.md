@@ -21,7 +21,7 @@ none
 - core libraries
 - interfaces for API Client
 - interfaces for Hooks
-0 interfaces for integrations
+- interfaces for integrations
 
 ## Interfaces
 

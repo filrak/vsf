@@ -135,10 +135,7 @@ import { getCategories } from '@vue-storefront/api-client'
 
 let categories;
 
-getCategories()
-  .then({ data } => 
-    categories = data
-  )
+getCategories().then({ data } => categories = data)
 ```
 
 Modify request to get categories
@@ -147,14 +144,8 @@ import { getCategories } from '@vue-storefront/api-client'
 
 let categories;
 
-getCategories({ params: { 
-    filter: { 
-      id: 123 
-      }
-  }})
-  .then({ data } => 
-    categories = data
-  )
+getCategories({ params: { filter: { id: 123 }}})
+  .then({ data } => categories = data)
 ```
 
 You can find implementation of API Client [here](./ntegrations.html#example)
