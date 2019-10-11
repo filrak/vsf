@@ -2,7 +2,7 @@
 
 New Vue Storefront should be modular and have strictly defined API. We should be able to work on each of them in separation without worrying that it will break other parts of the system. Users should be able to cut off functionalities they don't need without any problem. At bare minimum Vue Storefront should be able to work with any JavaScript application and framework. On top of this we will build additional "layers", each adding complexity and new features.
 
-Typical Vue Storefront shop will be using Nuxt Theme and Nuxt Module which will provide a working shop tempplate (Theme) and additional functionalities (Nuxt Module). Theme will be using Vue Storefront Hooks (in Vue Storefront integrations) to get product, category, cms and other data.
+Typical Vue Storefront shop will be using Nuxt Theme and Nuxt Module which will provide a working shop boilerplate (Theme) and additional functionalities (Nuxt Module). Theme will be using Vue Storefront Hooks (in Vue Storefront integration modules) to get product, category, cms and other data.
 
 Vue Storefront core is just a set of interfaces that will be used by
 - Vue Hooks (Product, Category, CMS etc) to provide common denominator between multiple platforms
