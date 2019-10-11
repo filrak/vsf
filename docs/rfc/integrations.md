@@ -47,7 +47,7 @@ setup({
 Once it's initialized we can just use this API in our Vue components:
 ```html
 <template>
- <b> This post is named: {{ title }} </b>
+ <b> This post is named: {{ content.title }} </b>
 </template>
 
 <script>
@@ -55,10 +55,10 @@ import { useContent } from 'vsf-wordpress'
 
 export default {
   setup () {
-    const { title } = useContent(42) // we want post with id 42
+    const { content } = useContent(42) // we want post with id 42
 
     return {
-      title // now we just need to return title to template
+      content // now we just need to return title to template
     }
   }
 }
