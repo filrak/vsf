@@ -11,7 +11,7 @@ In CLI people should be able to choose (from official modules)
 
 We can use templating engine like [handlebars](https://handlebarsjs.com) or [ejs](https://ejs.co/) to conditionally generate parts of the template based on CLI options.
 
-We want to do sam scaffolding that [vue cli 2](https://github.com/vuejs-templates/webpack) had. 
+We want to do same scaffolding that [vue cli 2](https://github.com/vuejs-templates/webpack) had. 
 ```js
 // from vue cli 2
 {{#if_eq build "standalone"}}
