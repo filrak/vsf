@@ -8,6 +8,7 @@ module.exports = {
         collapsable: false,
         children: [
           ["/rfc/api-client", "API Client"],
+          ["/rfc/data-api", "Data API"],
           ["/rfc/core", "Core"],
           ['/rfc/integrations','Integrations'],
           ["/rfc/nuxt-module", "Nuxt Module"],

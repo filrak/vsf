@@ -1,6 +1,6 @@
 # API Client package
 :::tip tl;dr
-API client provides a friendly abstraction layer over network calls and their configuration. By using it we can hide implementation details of **how** we get the data and just expose declarative API to be consumed by other apps. With that we can easily do things like switching from ES to GQL without introducing breaking cahnges  
+API client provides a friendly abstraction layer over network calls and their configuration. By using it we can hide implementation details of **how** we get the data and just expose declarative API to be consumed by other apps. With that we can easily do things like switching from ES to GQL without introducing breaking cahnges
 
 Every integration should use it's own API client. Core is exposing common interface that every API Client should use to ensure common way of configuring requests, headers etc  (there is only one interface for`setup()` function which is global API configuration). API Clients will be using axios.
 
@@ -68,14 +68,14 @@ Every request is just a axios request. You can override any request params just 
 
 `getProducts`
 - `filters` - based on product attributes (color, size etc)
-- `from` 
+- `from`
 - `to`
 - `include`
 - `exclude`
 
 `getCategories`
-- `filters` 
-- `from` 
+- `filters`
+- `from`
 - `to`
 - `include`
 - `exclude`
@@ -91,7 +91,7 @@ Every request is just a axios request. You can override any request params just 
 `removeFromCart`
 - `items` - list of unique id's
 
-`applyCoupon` 
+`applyCoupon`
 - `code`
 
 `removeCoupon`
@@ -105,15 +105,15 @@ Every request is just a axios request. You can override any request params just 
  - `shippingDetails`
  - `paymentMethod`
  - `paymentDetails`
- 
+
  ---
 
  `logIn`
- - `emaloginil`
+ - `email`
  - `password`
 
 `logOut`
-- `login`
+- `token`
 
 `register`
 - `login`
