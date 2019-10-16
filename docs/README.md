@@ -2,6 +2,6 @@
 :::warning
 THIS PROJECT IS SECRET
 
-**NAVER** TELL ANYONE ABOUT IT
-:::S
+**NEVER** TELL ANYONE ABOUT IT
+:::
 Go to [introduction](./introduction.md)
