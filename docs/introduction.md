@@ -1,66 +1,86 @@
-:::tip tl;dr
 
-New Vue Storefront should be modular and have strictly defined API. We should be able to work on each of them in separation without worrying that it will break other parts of the system. Users should be able to cut off functionalities they don't need without any problem. At bare minimum Vue Storefront should be able to work with any JavaScript application and framework. On top of this we will build additional "layers", each adding complexity and new features.
+# What is Vue Storefront Next
 
-Typical Vue Storefront shop will be using Nuxt Theme and Nuxt Module which will provide a working shop boilerplate (Theme) and additional functionalities (Nuxt Module). Theme will be using Vue Storefront Hooks (in Vue Storefront integration modules) to get product, category, cms and other data.
+Vue Storefront is a **fraemework**!. It's a set of **standalone tools related to either agnostic eCommerce logic or specific platform that can be used standalone or together in any combination** to create great headless shops. Vue Storefront Core provides **declarative** TypeScript interfaces for those tools to ensure common data formats and same declarative approach across every platform. 
 
-Vue Storefront core is just a set of interfaces that will be used by
-- Vue Hooks (Product, Category, CMS etc) to provide common denominator between multiple platforms
-- API clients to provide common approach to APIs and standarized way of configuration
+# What agnostic parts Vue Storefront brings
 
-We should also avoid complexity and make VS as simple as possible.
-:::
+## Interfaces
 
+Vue Storefront Interfaces package is a set of TypeScript interfaces for 3rd party integrations. The purpose of those interfaces is to ensure same declarative approach and decent developer experience for every platform. It also simlifies learning curve as most of the things could be done the same way in every platform.
 
-## High level goals
+There are two types of interfaces:
+- `composables` for Vue Composition API functions responsible for interactions with high-level eCommerce entities like products, carts, CMS content etc. For exaple we could use `useProduct` hook to get product(s) based on specific search params.
+- `helpers` are meant to simp
 
-- Simple installation
-- Seamless updates
-- Easy maintanance of core 
-- Smallest possible complexity
-- Good Developer experience
-- Ability to repalce/extend any part of the application
-- Some level of unification with "native" VS integrations (like Shopware)
-- "Printing" good practises in a project so it's hard to make a project that doesn't run smooth and has bad performance.
-- Great performance
-- Good test coverage and testing tools for community
+[More on interfaces](./interfaces.md)
 
-Before every architectural decision we should make sure that it's making it easier for us to achieve all of those goals.
+## Vue Storefront Nuxt Module
 
-## High-level rules for project architecture
+VSF Nuxt Mdule is platform-agnostic module for Nuxt that adds some VSF-specific features on top of Nuxtjs (for example URL dispatching and some performance optimizations). It also installs other required Nuxt Modules like `@nuxt/typescript-build` so user can add everything that is required by other packages(like integrations) via single command. It also hides some configuration  etails from the user so it's easier for us to maintain and update it.
 
-To ensure coverage of every possible use case Vue Storefront 2 needs to be a **framework**. Developers should be able to replace and remove every part of the system that they need.
+## Storefront UI
 
-Here is a set of high-level architectural rules that are meant to fulfill above requirements. Their main purpose is to make sure that project is easy to maintain, extend and every decision is reversable.
+[Storefront UI](https://storefrontui.io/) is a set of highly customizable, mobile-first and performant UI components specifically crafted for eCommerce storefront.
 
-- Project should have decoupled architecture to ensure that every of it's parts is encapsulated and communicates with outside world only via strictly declaired public API defined in core. Implementation details of given part shouldn't influence those APIs.
-- We should provide common interfaces for replaceable platform-specific parts to make it easier to maintain multiple platform integrations and learn Vue Storefront.
-- Additional complexity should be avoided whenever possible (especialy unnecesary abstractions for uncertain future goals)
-- Core package must be tree-shakeable.
-- For current magento/agnostic integration most of the eCommerce complexity should be on the API level
+## Vue Storefront CLI
 
-## High-level architecture
+Vue Storefront CLI is a tool for scaffolding Vue Storefront applications. Through CLI you should be able to:
+- Choose eCommerce platform
+- Choose CMS platform
+- Decide if you want to use a clean installation without templates and CSS or a full project.
 
-Project should be devided into isolated parts with strictly defined responsibilities.
+It transforms scaffolding theme into a working Nuxt project.
 
-Every part of the system should expose public API for input/output operations that is not tied to it's implementation details. Usage of every service should be reversable which means we shouldn't base any modules behavior on implementation details of another module. To ensure every part is working well with others we will define common interfaces in core package.
+# What platform-specific parts Vue Storefront brings
 
-:::tip
-Using **Nuxt Theme** with **Nuxt Module** is recommended way of using Vue Storefront and we shouldn't encourage people to experiment with other options. Most of the features will require Nuxt but we should provide an option to use bare VS core or even bare VS API Client without any issues (so with a single comman installation). It's meant mostly for very custom projects that don't need most of our features and complexity.
-:::
-
-Project should be divided into following parts:
-
-- **Vue Storefront API** 
-- [**API Client**](./rfc/api-client.md) 
-- [**Vue Storefront Core**](./rfc/core.md) 
-- [**Core libraries**](./rfc/libraries.md) 
-- [**Core/3rd party integration modules**](./rfc/integrations.md) 
-- [**Vue Storefront Nuxt Module**](./rfc/nuxt-module.md) 
-- [**Nuxt Theme**](./rfc/nuxt-theme.md)
-
-<center><img src="./rfc/assets/vs-high-level-architecture-diagram.png" /></center>
+## API Client
 
 :::warning
- Some solutions may slightly or highly change if they fail to serve their purpose or prevent us from reaching any of project goals.
+If there is already an API client availabel for a given platform VSF-specific API client can be omitted
 :::
+Tiny abstraction layer over API of a given platform along with [declarative helpers](./integrations.md). API Client should be framework-agnostic tehrefore could be used with any framework (like React) or any JavaScript application.
+
+- API calls are exposed as functions (i.e. `getProduct()`)
+
+Optional naming convention for API clients is: `vsf-{platform}-client`
+If package is a part of `@vue-storefront` org `vsf` prefix can be ommited.
+
+
+**Common elements**: 
+
+- `setup()` (?)
+
+[API Client guide](api-client.md)
+
+## Helpers
+
+Decalrative helpers that are pure functions meant to extract certain values from certain data objects.
+
+For example given complex `product` object no matter which platform we are using we can always extract prodyc options through
+`getProductOptions(product)`.
+
+**Common elementss**: 
+
+- `helpers` interfaces
+
+## Composables
+
+Naming convention for composables  is: `vsf-{platform}-composables`.
+If package is a part of `@vue-storefront` org `vsf` prefix can be ommited.
+
+**Common elements**: 
+- `composables` interfaces
+
+[Composables guide]()
+
+## Scaffolding Theme 
+
+Nuxt-based theme boilerplate that is consumed by CLI and transformed into a working project theme. Scaffolding theme is slightly different than project one. It includess magic comments and extension points that are used by CLI to include/change some parts of the code and generate project theme.
+
+**Common elements**: 
+
+- directory structure
+- magic comments/config for CLI addons (more [here](./cli.md))
+
+[Theme guide]()

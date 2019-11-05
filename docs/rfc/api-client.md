@@ -1,17 +1,15 @@
 # API Client package
-:::tip tl;dr
-API client provides a friendly abstraction layer over network calls and their configuration. By using it we can hide implementation details of **how** we get the data and just expose declarative API to be consumed by other apps. With that we can easily do things like switching from ES to GQL without introducing breaking cahnges
+API client provides a friendly abstraction layer over network calls and their configuration. By using it we can hide implementation details of **how** we get the data and just expose declarative API to be consumed by other apps. With that we can easily do things like switching from ES to GQL without introducing breaking cahnges. Every integration should have it's own API client. 
 
-Every integration should use it's own API client. Core is exposing common interface that every API Client should use to ensure common way of configuring requests, headers etc  (there is only one interface for`setup()` function which is global API configuration). API Clients will be using axios.
+API client is one of the three parts of eCommerce/CMS integration. Other ones are [Composables](./composables.md) and [helpers](./helpers.md).
 
-API client is one of two parts of eCommerce/CMS integration. Second one is an integration that exposes Vue hooks. API client is not mandatory but we should promote writing dedicated API clients as a good practice to ensure that every integration is configurable
+As a good practice Vue Storefront API clients should use [axios](https://github.com/axios/axios) to provide decent level of configuration over network calls.
 
 **Every API client is a standalone package that can be used in any JavaScript project.**.
+
+:::warning
+If platform you want to integrate with has it's own API client you don't need to create another one.
 :::
-
-## Responsibilities
-
-API client responsibility is just to make an abstraction over API data operations and it's configuration.
 
 ## Architecture
 ![Architecture](./assets/api-client.png)
@@ -29,23 +27,20 @@ API client responsibility is just to make an abstraction over API data operation
 
 ### Initialization with `setup()`
 
-With this method we can setup global configuration for every request. You can pass every `axios.create()` ([ref](https://github.com/axios/axios#axioscreateconfig)) option here.
+API Client should expose `setup()` method to setup axios configuraion (([axios.create()](https://github.com/axios/axios#axioscreateconfig)).
 
-API Client ships with default configuration that can be overwritten by the user (so usually the only thing you add is `baseURL`)
+API Client should have default, most optimal configuration setted up out of the box so the only thing that needs to be overwritten by the user is `baseUrl` property.
 
-**NOTE** Not certain yet
-There is also `resolvers` object letting users modify every axios request to VS API. Every resolver is in a form of [axios request](https://github.com/axios/axios#request-config).
+**Example of usage**
 
-**Examples**
+Setting up application just with `baseURL`:
 
-**NOTE** `setup()` is needed only if you want to use API Client standalone. For Nuxt apps those options are hoisted into Nuxt config.
-Setting up application just with `baseURL`
 ```js
 setup({
   baseURL: 'https://some-domain.com/api/'
 })
 ```
-Setting up advanced configuration and overriding (for future versions)
+Setting up advanced configuration:
 
 ```js
 setup({
@@ -55,11 +50,17 @@ setup({
 })
 ```
 
-### Getting data
+**Example of implementation**
 
-Every request is just a axios request. You can override any request params just by passing axios properties to method arguments.
+```js
+let apiClient: ApiClient = null;
 
-#### Available methods
+export const setup = (axiosConfig: AxiosRequestConfig, config?: Config): void => {
+  apiClient = new ApiClient(axiosConfig, config)
+}
+```
+
+#### Example of API Client methods
 
 `getProduct`
 - `id`
@@ -125,31 +126,3 @@ Every request is just a axios request. You can override any request params just 
 
 `profile`
 - `token`
-
-
-**Examples**
-
-Get all categories (default behavior)
-```js
-import { getCategories } from '@vue-storefront/api-client'
-
-let categories;
-
-getCategories().then({ data } => categories = data)
-```
-
-Modify request to get categories
-```js
-import { getCategories } from '@vue-storefront/api-client'
-
-let categories;
-
-getCategories({ params: { filter: { id: 123 }}})
-  .then({ data } => categories = data)
-```
-
-You can find implementation of API Client [here](./ntegrations.html#example)
-
-## To consider
-
-- exporting `axios.interceptors` for network interceptors
