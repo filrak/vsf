@@ -51,7 +51,7 @@ If package is a part of `@vue-storefront` org `vsf` prefix can be ommited.
 
 - `setup()` (?)
 
-[API Client guide](api-client.md)
+[API Client guide](./api-client.md)
 
 ## Helpers
 
@@ -64,6 +64,8 @@ For example given complex `product` object no matter which platform we are using
 
 - `helpers` interfaces
 
+[Helpers guide](./helpers.md)
+
 ## Composables
 
 Naming convention for composables  is: `vsf-{platform}-composables`.
@@ -72,15 +74,15 @@ If package is a part of `@vue-storefront` org `vsf` prefix can be ommited.
 **Common elements**: 
 - `composables` interfaces
 
-[Composables guide]()
+[Composables guide](./composables.md)
 
 ## Scaffolding Theme 
 
-Nuxt-based theme boilerplate that is consumed by CLI and transformed into a working project theme. Scaffolding theme is slightly different than project one. It includess magic comments and extension points that are used by CLI to include/change some parts of the code and generate project theme.
+Nuxt-based theme boilerplate that is consumed by CLI and transformed into a working project theme. Scaffolding theme is slightly different than project one. It includess magic comments and extension points that are used by CLI to include/change some parts of the code and generate project tsheme.
 
 **Common elements**: 
 
 - directory structure
-- magic comments/config for CLI addons (more [here](./cli.md))
+- magic comments/config for CLI addons
 
-[Theme guide]()
+[CLI guide](./cli.md)
