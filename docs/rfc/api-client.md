@@ -1,4 +1,5 @@
 # API Client package
+
 API client provides a friendly abstraction layer over network calls and their configuration. By using it we can hide implementation details of **how** we get the data and just expose declarative API to be consumed by other apps. With that we can easily do things like switching from ES to GQL without introducing breaking cahnges. Every integration should have it's own API client. 
 
 API client is one of the three parts of eCommerce/CMS integration. Other ones are [Composables](./composables.md) and [helpers](./helpers.md).
@@ -15,32 +16,22 @@ If platform you want to integrate with has it's own API client you don't need to
 ![Architecture](./assets/api-client.png)
 
 **Input**
-- data from Vue Storefront API
+- data from platform API
 - configuration from`setup()` function where you can set basic axios properties and modify endpoints.
-- API Client interfaces from core
 
 **Output**
 - functions for data resolution (like `getProduct`, `makeOrder` etc)
 - `setup` function
 
-## API
+## How it works
 
 ### Initialization with `setup()`
 
-API Client should expose `setup()` method to setup axios configuraion (([axios.create()](https://github.com/axios/axios#axioscreateconfig)).
+API Client should expose `setup()` method that can be used in a project to setup axios configuraion (([axios.create()](https://github.com/axios/axios#axioscreateconfig)).
 
 API Client should have default, most optimal configuration setted up out of the box so the only thing that needs to be overwritten by the user is `baseUrl` property.
 
-**Example of usage**
-
-Setting up application just with `baseURL`:
-
-```js
-setup({
-  baseURL: 'https://some-domain.com/api/'
-})
-```
-Setting up advanced configuration:
+Below you can see example usage of setup method in a project: 
 
 ```js
 setup({
@@ -50,7 +41,7 @@ setup({
 })
 ```
 
-**Example of implementation**
+And this is how this setup method could be implemented in API client.
 
 ```js
 let apiClient: ApiClient = null;
@@ -60,7 +51,7 @@ export const setup = (axiosConfig: AxiosRequestConfig, config?: Config): void =>
 }
 ```
 
-#### Example of API Client methods
+#### Examples of API Client methods
 
 `getProduct`
 - `id`
