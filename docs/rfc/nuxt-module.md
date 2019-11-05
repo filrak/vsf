@@ -25,3 +25,8 @@ Then add to your `nuxt.config.js` and (if needed) pass some additional configura
     }]
  ]
 ```
+
+# Options
+
+- `coreDevelopment` (`false`) - adds aliases and settings required for Vue Storefront core development
+- `useRawSource` (name will be changes, by default transpiles Storefront UI packages) - uses `module` entry point of given package specified in `package.json` and adds it to list of transpiled modules
