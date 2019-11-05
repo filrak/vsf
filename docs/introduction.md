@@ -17,8 +17,9 @@ There are two types of interfaces:
 
 ## Vue Storefront Nuxt Module
 
-VSF Nuxt Mdule is platform-agnostic module for Nuxt that adds some VSF-specific features on top of Nuxtjs (for example URL dispatching and some performance optimizations). It also installs other required Nuxt Modules like `@nuxt/typescript-build` so user can add everything that is required by other packages(like integrations) via single command. It also hides some configuration  etails from the user so it's easier for us to maintain and update it.
+VSF Nuxt Mdule is platform-agnostic module for Nuxt that adds some VSF-specific features on top of Nuxtjs (for example URL dispatching and some performance optimizations). It also installs other required Nuxt Modules and libraries like `@vue/composition-api` so user can add everything that is required by other packages(like integrations) via single command. It also hides some configuration  etails from the user so it's easier for us to maintain and update it.
 
+[More on Nuxt Module](./rfc/nuxt-module.md)
 ## Storefront UI
 
 [Storefront UI](https://storefrontui.io/) is a set of highly customizable, mobile-first and performant UI components specifically crafted for eCommerce storefront.
