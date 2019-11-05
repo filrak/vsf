@@ -3,7 +3,7 @@
 
 Vue Storefront is a **fraemework**!. It's a set of **standalone tools related to either agnostic eCommerce logic or specific platform that can be used standalone or together in any combination** to create great headless shops. Vue Storefront Core provides **declarative** TypeScript interfaces for those tools to ensure common data formats and same declarative approach across every platform. 
 
-# What agnostic parts Vue Storefront brings
+# Agnostic parts
 
 ## Interfaces
 
@@ -34,7 +34,7 @@ It transforms scaffolding theme into a working Nuxt project.
 
 [More on CLI](./rfc/cli.md)
 
-# What platform-specific parts Vue Storefront brings
+# Platform-specific parts
 
 ## API Client
 
