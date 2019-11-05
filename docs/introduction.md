@@ -1,17 +1,17 @@
 
 # What is Vue Storefront Next
 
-Vue Storefront is a **fraemework**!. It's a set of **standalone tools related to either agnostic eCommerce logic or specific platform that can be used standalone or together in any combination** to create great headless shops. Vue Storefront Core provides **declarative** TypeScript interfaces for those tools to ensure common data formats and same declarative approach across every platform. 
+Vue Storefront is a **framework**!. It's a set of **standalone tools related to either agnostic eCommerce logic or specific platform that can be used standalone or together in any combination** to create great headless shops. Vue Storefront Interfaces packge provides TypeScript interfaces for those tools to ensure common data formats and same **declarative** approach across every platform. 
 
 # Agnostic parts
 
 ## Interfaces
 
-Vue Storefront Interfaces package is a set of TypeScript interfaces for 3rd party integrations. The purpose of those interfaces is to ensure same declarative approach and decent developer experience for every platform. It also simlifies learning curve as most of the things could be done the same way in every platform.
+Vue Storefront Interfaces package is a set of TypeScript interfaces for 3rd party integrations. The purpose of those interfaces is to ensure same declarative approach and decent developer experience for every platform integrated with Vue Storefronts. It also simlifies learning curve as most of the things could be done the same way in every platform.
 
 There are two types of interfaces:
-- `composables` for Vue Composition API functions responsible for interactions with high-level eCommerce entities like products, carts, CMS content etc. For exaple we could use `useProduct` hook to get product(s) based on specific search params.
-- `helpers` are meant to simpify operations on big and complicated objects like `product` or `category`. Helper is a pure function that takes object as argument and returns subset of it's data. For example we will use `getProductOptions(product)` to quickly get a list of available product options without digging into product object itseld. 
+- `composables` for Vue Composition API functions responsible for interactions with high-level eCommerce entities like products, carts, CMS content etc. For example we could use `useProduct` composable to get specific product(s) and `useCategory` to get specific category/categories.
+- `helpers` are meant to simpify operations on big and complicated data objects like `product` or `category`. Helper is a pure function that takes object as argument and returns subset of it's data. For example we will use `getProductOptions(product)` to quickly get a list of available product options without digging into product object itseld. 
 
 [More on interfaces](./rfc/interfaces.md)
 
