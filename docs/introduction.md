@@ -87,4 +87,4 @@ Nuxt-based theme boilerplate that is consumed by CLI and transformed into a work
 - directory structure
 - magic comments/config for CLI addons
 
-[CLI guide](./cli.md)
+[Theme guide](./rfc/theme.md)
