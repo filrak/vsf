@@ -11,9 +11,9 @@ Vue Storefront Interfaces package is a set of TypeScript interfaces for 3rd part
 
 There are two types of interfaces:
 - `composables` for Vue Composition API functions responsible for interactions with high-level eCommerce entities like products, carts, CMS content etc. For exaple we could use `useProduct` hook to get product(s) based on specific search params.
-- `helpers` are meant to simp
+- `helpers` are meant to simpify operations on big and complicated objects like `product` or `category`. Helper is a pure function that takes object as argument and returns subset of it's data. For example we will use `getProductOptions(product)` to quickly get a list of available product options without digging into product object itseld. 
 
-[More on interfaces](./interfaces.md)
+[More on interfaces](./rfc/interfaces.md)
 
 ## Vue Storefront Nuxt Module
 
@@ -31,6 +31,8 @@ Vue Storefront CLI is a tool for scaffolding Vue Storefront applications. Throug
 - Decide if you want to use a clean installation without templates and CSS or a full project.
 
 It transforms scaffolding theme into a working Nuxt project.
+
+[More on CLI](./rfc/cli.md)
 
 # What platform-specific parts Vue Storefront brings
 
@@ -51,7 +53,7 @@ If package is a part of `@vue-storefront` org `vsf` prefix can be ommited.
 
 - `setup()` (?)
 
-[API Client guide](./api-client.md)
+[API Client guide](./rfc/api-client.md)
 
 ## Helpers
 
@@ -64,7 +66,7 @@ For example given complex `product` object no matter which platform we are using
 
 - `helpers` interfaces
 
-[Helpers guide](./helpers.md)
+[Helpers guide](./rfc/helpers.md)
 
 ## Composables
 
@@ -74,7 +76,7 @@ If package is a part of `@vue-storefront` org `vsf` prefix can be ommited.
 **Common elements**: 
 - `composables` interfaces
 
-[Composables guide](./composables.md)
+[Composables guide](./rfc/composables.md)
 
 ## Scaffolding Theme 
 
