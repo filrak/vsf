@@ -1,7 +1,3 @@
-# Vue Storefront Next plan
-:::warning
-THIS PROJECT IS SECRET
+# Vue Storefront 2.0 plan
 
-**NEVER** TELL ANYONE ABOUT IT
-:::
 Go to [introduction](./introduction.md)
