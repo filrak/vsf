@@ -30,3 +30,7 @@ Then add to your `nuxt.config.js` and (if needed) pass some additional configura
 
 - `coreDevelopment` (`false`) - adds aliases and settings required for Vue Storefront core development
 - `useRawSource` (name will be changed, by default transpiles Storefront UI packages) - uses `module` entry point of given package specified in `package.json` and adds it to list of transpiled modules
+
+# What it does right now
+
+Without additional configuration after installation this module will install and set up Composition API plugin for you.

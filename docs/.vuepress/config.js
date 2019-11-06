@@ -3,6 +3,7 @@ module.exports = {
   description: 'Just playing around',
   themeConfig: {
     sidebar: [
+      ["/introduction", "Introduction"],
       {
         title: 'Agnostic',
         collapsable: false,

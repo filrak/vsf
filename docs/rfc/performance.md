@@ -6,5 +6,5 @@
 - Target PSI and Lighthouse performance score shouldn't be lower than 90 with default configuration and theme.
 - Initial sise of downloaded assets per page shouldn't exceed 170 kB
 - TTI in 3G shouldn't be worse than 5s
-- Integration packages (`api client`, `composables`, `helpers`)
+- Integration packages (`api client`, `composables`, `helpers`) must be tree-shakeable
 
