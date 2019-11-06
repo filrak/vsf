@@ -4,8 +4,8 @@ Vue Storefront Interfaces package is a set of TypeScript interfaces for 3rd part
 
 We can divide interfaces into two groups:
 
-- `composables` for Vue composables exposed by 3rd party integration. We define only name of the composable and data that it returns.
-- `helpers` for declarative functions that are meant to extract specific data from objects returned by composables
+- [`composables`](./composables.md) for Vue composables exposed by 3rd party integration. We define only name of the composable and data that it returns.
+- [`helpers`](./helpers.md) for declarative functions that are meant to extract specific data from objects returned by composables
 
 ### Finding a common denominator
 
@@ -41,6 +41,8 @@ search({ id: '123' }) // fetch data based on search parameters and populate prod
 ```
 Please note that thanks to generic types we can still have full platform-specifc type-checking and suggestions.
 
-## Resources
+Composables are very useful but if we would rely only on them we couldn't provide consistant developer experience across every platform. Even though we have a common way of getting the data and interacting with it sometimes it's not enough. specifically it's not enough when we want to have a common way of extracting certain information from this data objects. This is exactly what helper interfaces are for. 
 
-- [Interfaces source](https://github.com/filrak/next/blob/master/packages/core/index.ts)
+We can agree that no matter which platform we use we should have easy way of extracting product options. For this purpose there is a `getProductOptions(product)` helper interface that accepts `product` object and returns it's options.  Same way we can extract other data like images, prices etc.
+
+[Here](https://github.com/filrak/next/blob/master/packages/core/index.ts) you can find current Vue Storefront interfaces.

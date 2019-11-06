@@ -28,6 +28,7 @@ module.exports = {
         children: [
           ["/rfc/browser-support", "Browser support"],
           ['/rfc/internationalization','Internationalization'],
+          ['/rfc/performance','Performance'],
         ],
       },
 
