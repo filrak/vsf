@@ -29,7 +29,7 @@ export default {
   }
 }
 ```
-The problem that users may encounter is that extracting certain informations from `product` can be either easy or hard depending on a backend platform. it will for sure require better knowledge of it's data formats. We could provide some helper methods like `getProductVariants` or `getProductImages` that take `product` as argument and return specific information. That way we have not only same way of extracting data across multiple paltforms but also speed this extraction up. Instead of extracting `product.something.something[0].images` we can just write `getProductImages(product)`.
+The problem that users may encounter is that extracting certain informations from `product` can be either easy or hard depending on a backend platform. It will for sure require good knowledge of platforms data formats. We could provide some helper methods like `getProductVariants` or `getProductImages` that take `product` as argument and return specific information. That way we have not only same way of extracting data across multiple paltforms but also speed this extraction up. Instead of extracting `product.something.something[0].images` we can just write `getProductImages(product)`.
 
 ```js
 import { useProduct } from 'vsf-commerce-tools-composables'
