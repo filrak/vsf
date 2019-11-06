@@ -21,7 +21,15 @@ module.exports = {
           ["/rfc/composables", "Composables"],
           ["/rfc/nuxt-theme", "Nuxt Scaffolding Theme"],
         ],
-      }
+      },
+      {
+        title: 'Other',
+        collapsable: false,
+        children: [
+          ["/rfc/browser-support", "Browser support"],
+          ['/rfc/internationalization','Internationalization'],
+        ],
+      },
 
     ]
   }
