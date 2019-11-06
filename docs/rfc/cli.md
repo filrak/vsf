@@ -2,7 +2,7 @@
 
 Vue Storefront CLI is a command-line interface for scaffolding Vue storefront apps.
 
-After answering series of questions this tool will set up new Vue Storefront application for you.
+After answering series of questions this tool will set up new Vue Storefront application for you. It will work similarly to Vue CLI right now.
 
 ## Options
 
