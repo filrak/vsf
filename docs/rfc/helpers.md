@@ -46,7 +46,7 @@ export default {
 
     const productImages = computed(() => getProductImages(product))
     const productPrices = computed(() => getProductPrices(product))
-    const productVariants = computed(() => getProductvariants(product))
+    const productVariants = computed(() => getProductVariants(product))
 
     return {
       product,
