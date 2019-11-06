@@ -43,6 +43,6 @@ Please note that thanks to generic types we can still have full platform-specifc
 
 Composables are very useful but if we would rely only on them we couldn't provide consistant developer experience across every platform. Even though we have a common way of getting the data and interacting with it sometimes it's not enough. specifically it's not enough when we want to have a common way of extracting certain information from this data objects. This is exactly what helper interfaces are for. 
 
-We can agree that no matter which platform we use we should have easy way of extracting product options. For this purpose there is a `getProductOptions(product)` helper interface that accepts `product` object and returns it's options.  Same way we can extract other data like images, prices etc.
+We can agree that no matter which platform we use we should have easy way of extracting product options. For this purpose there is a `getProductVariants(product)` helper interface that accepts `product` object and returns it's options.  Same way we can extract other data like images, prices etc.
 
 [Here](https://github.com/filrak/next/blob/master/packages/core/index.ts) you can find current Vue Storefront interfaces.

@@ -11,7 +11,7 @@ Vue Storefront Interfaces package is a set of TypeScript interfaces for 3rd part
 
 There are two types of interfaces:
 - `composables` for Vue Composition API functions responsible for interactions with high-level eCommerce entities like products, carts, CMS content etc. For example we could use `useProduct` composable to get specific product(s) and `useCategory` to get specific category/categories.
-- `helpers` are meant to simpify operations on big and complicated data objects like `product` or `category`. Helper is a pure function that takes object as argument and returns subset of it's data. For example we will use `getProductOptions(product)` to quickly get a list of available product options without digging into product object itseld. 
+- `helpers` are meant to simpify operations on big and complicated data objects like `product` or `category`. Helper is a pure function that takes object as argument and returns subset of it's data. For example we will use `getProductVariants(product)` to quickly get a list of available product options without digging into product object itseld. 
 
 [More on interfaces](./rfc/interfaces.md)
 
@@ -61,7 +61,7 @@ If package is a part of `@vue-storefront` org `vsf` prefix can be ommited.
 Decalrative helpers that are pure functions meant to extract certain values from certain data objects.
 
 For example given complex `product` object no matter which platform we are using we can always extract prodyc options through
-`getProductOptions(product)`.
+`getProductvariants(product)`.
 
 **Common elementss**: 
 
