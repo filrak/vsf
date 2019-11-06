@@ -4,7 +4,7 @@ Every integration should expose `vsf-{platform}-helpers` package.
 
 Helpers are meant to provide easy extraction of certain subproperties from large data obejcts such as `product` or `category`.
 
-Below you can see example of a composable that get product data:
+Below you can see example of a composable that gets product data:
 ```js
 import { useProduct } from 'vsf-commerce-tools-composables'
 import { computed } from '@vue/composition-api'
