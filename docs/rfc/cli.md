@@ -8,12 +8,12 @@ After answering series of questions this tool will set up new Vue Storefront app
 
 First phase (MVP):
 - eCommerce integration (and API URL)
-- CMS integration (and API URL)
-- Storefront UI (yes/no)
 
 Second phase:
 - Internationalization (yes/no)
 - SEO-friendly URLs (yes/no)
+- Storefront UI (yes/no)
+- CMS integration (and API URL)
 
 
 ## Under the hood
