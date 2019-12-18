@@ -1,3 +1,3 @@
-# Vue Storefront 2.0 plan
+# Vue StorefrontNext
 
 Go to [introduction](./introduction.md)
