@@ -18,8 +18,8 @@ module.exports = {
         collapsable: false,
         children: [
           ["/rfc/api-client", "API Client"],
-          ['/rfc/helpers','Helpers'],
           ["/rfc/composables", "Composables"],
+          ['/rfc/helpers','Helpers'],
           ["/rfc/nuxt-theme", "Nuxt Scaffolding Theme"],
         ],
       },
