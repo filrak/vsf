@@ -56,6 +56,17 @@ If package is a part of `@vue-storefront` org `vsf` prefix can be ommited.
 
 [API Client guide](./rfc/api-client.md)
 
+## Composables
+
+Naming convention for composables  is: `vsf-{platform}-composables`.
+If package is a part of `@vue-storefront` org `vsf` prefix can be ommited.
+
+**Common elements**: 
+- `composables` interfaces
+
+[Composables guide](./rfc/composables.md)
+
+
 ## Helpers
 
 Decalrative helpers that are pure functions meant to extract certain values from certain data objects.
@@ -68,16 +79,6 @@ For example given complex `product` object no matter which platform we are using
 - `helpers` interfaces
 
 [Helpers guide](./rfc/helpers.md)
-
-## Composables
-
-Naming convention for composables  is: `vsf-{platform}-composables`.
-If package is a part of `@vue-storefront` org `vsf` prefix can be ommited.
-
-**Common elements**: 
-- `composables` interfaces
-
-[Composables guide](./rfc/composables.md)
 
 ## Scaffolding Theme 
 
